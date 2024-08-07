@@ -53,17 +53,12 @@
             margin-bottom: 1em;
         }
 
-        .dropdown-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .dropdown-container select {
-            font-size: 1em;  /* Iets kleiner font-size */
-            padding: 0.3em 0.8em;  /* Kleinere padding */
+        .content button {
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            margin: 0.5em;
             border: none;
-            border-radius: 10px;  /* Minder afgeronde hoeken */
+            border-radius: 20px;
             background-color: #333;
             color: #fff;
         }
@@ -76,6 +71,23 @@
         .current .content p {
             color: #ddd;
             text-shadow: 0 0 5px #000;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container .button {
+            font-size: 1.2em;
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border: none;
+            border-radius: 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
         }
 
         /* Responsive styles */
@@ -95,6 +107,11 @@
             .content p {
                 font-size: 1.2em;
             }
+
+            .content button {
+                font-size: 1em;
+                padding: 0.5em;
+            }
         }
 
         @media (max-width: 480px) {
@@ -113,6 +130,11 @@
             .content p {
                 font-size: 1em;
             }
+
+            .content button {
+                font-size: 0.8em;
+                padding: 0.4em;
+            }
         }
     </style>
 </head>
@@ -120,31 +142,28 @@
     <div class="slider">
         <div class="slide current">
             <div class="content">
-                <h1>Selecteer Discipline</h1>
-                <p>Hier kunt u een veiligheidsregio selecteren waarvan u het voertuigenoverzicht wilt zien</p>
+                <h1>Selecteer discipline</h1>
+                <p>Hier kunt u een discipline selecteren waarvan u het voertuigenoverzicht wilt zien</p>
             </div>
         </div>
         <div class="slide">
             <div class="content">
-                <h1>Selecteer veiligheidsregio</h1>
-                <p>Hier kunt u een veiligheidsregio selecteren waarvan u het voertuigenoverzicht wilt zien</p>
+                <h1>Selecteer discipline</h1>
+                <p>Hier kunt u een discipline selecteren waarvan u het voertuigenoverzicht wilt zien</p>
             </div>
         </div>
         <div class="slide">
             <div class="content">
-                <h1>Selecteer veiligheidsregio</h1>
-                <p>Hier kunt u een veiligheidsregio selecteren waarvan u het voertuigenoverzicht wilt zien</p>
+                <h1>Selecteer discipline</h1>
+                <p>Hier kunt u een discipline selecteren waarvan u het voertuigenoverzicht wilt zien</p>
             </div>
         </div>
     </div>
 
-    <div class="dropdown-container">
-        <select onchange="location = this.value;">
-            <option value="">Selecteer een discipline</option>
-            <option value="nederland/politie">Politie</option>
-            <option value="nederland/brandweer">Brandweer</option>
-            <option value="nederland/ambupance">Ambulance</option>
-        </select>
+    <div class="button-container">
+        <a class="button" hrer="politie">Voertuigoverzicht Politie</a>
+        <a class="button" href="brandweer">Voertuigoverzicht Brandweer</a>
+        <a class="button" href="ambulance">Voertuigoverzicht Ambulance</a>
     </div>
 </body>
 </html>
