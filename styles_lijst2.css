@@ -16,6 +16,7 @@ body {
     overflow-x: auto; /* Zorg ervoor dat de tabel kan scrollen op kleine schermen */
 }
 
+/* Voor desktop en tablet */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -47,8 +48,25 @@ tbody tr:hover {
 
 /* Responsieve stijlen voor mobiele apparaten */
 @media (max-width: 640px) {
+    .table-responsive {
+        display: block;
+    }
+
+    table {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    thead, tbody, tr {
+        display: contents; /* Dit zorgt ervoor dat we de cellen kunnen stylen als flex items */
+    }
+
     th, td {
+        flex: 1; /* Zorgt ervoor dat alle cellen gelijk zijn en naast elkaar staan */
         padding: 8px; /* Verminder padding op mobiele apparaten */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        text-align: center; /* Center de tekst */
     }
 
     th {
