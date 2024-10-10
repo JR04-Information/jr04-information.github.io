@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hulpvoertuigen Lijst Nederland</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -10,52 +10,86 @@
             background: linear-gradient(to bottom right, #1a1a2e, #16213e);
             min-height: 100vh;
             font-family: Arial, sans-serif;
+            color: white; /* Tekstkleur voor de hele pagina */
         }
 
-        .table-row-group:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.05);
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        .table-row-group:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.1);
+        .table-container {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 10px; /* Voorkom dat de inhoud de footer overlapt */
         }
 
         footer {
-            background-color: #333;
-            color: #ccc;
+            background-color: #16213e; /* Gebruik de kleur van de achtergrond */
+            color: #ccc; /* Tekstkleur van de footer */
             text-align: center;
             padding: 10px;
+            margin-top: auto;
         }
 
-        .responsive-table {
+        .table-container table {
+            width: 100%;
+            min-width: 1200px; /* Zorg ervoor dat de tabel niet te smal wordt */
+        }
+
+        .table-container {
+            height: 1200px; /* Stel de hoogte in voor de tabelcontainer */
+        }
+
+        table {
             width: 100%;
             border-collapse: collapse;
-            overflow-x: auto; /* Scroll alleen als nodig */
         }
 
         th, td {
             padding: 8px;
             text-align: left;
-            word-wrap: break-word; /* Laat de tekst binnen de cel afbreken */
+            border: none; /* Geen randen meer */
+            color: white; /* Tekstkleur voor cellen */
         }
 
         th {
-            background-color: #444;
+            background-color: #444; /* Kleur van de bovenste rij */
             color: white;
+            position: sticky; /* Blijft bovenaan tijdens scrollen */
+            top: 0;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.05); /* Alternating row colors for better readability */
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
         }
 
         @media (max-width: 768px) {
-            table {
-                font-size: 0.75rem; /* Kleinere tekst op mobiele apparaten */
+            .overflow-x-auto {
+                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
             }
 
+            .bg-gray-600 {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Verminder padding en font-size voor kleinere schermen */
             th, td {
                 padding: 4px; /* Verminder padding voor kleinere cellen */
+                font-size: 0.875rem; /* Kleinere tekst op mobiele apparaten */
             }
         }
     </style>
 </head>
-<body class="text-white">
+<body>
     <div class="container mx-auto px-4 py-8">
         <header class="flex justify-between items-center mb-8">
             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
@@ -100,38 +134,49 @@
             </div>
 
             <div class="overflow-x-auto">
-                <table class="responsive-table">
+                <table class="w-full">
                     <thead>
                         <tr class="text-left text-sm">
-                            <th class="py-2 px-2">Adres</th>
-                            <th class="py-2 px-2">Roepnaam</th>
-                            <th class="py-2 px-2">Type voertuig</th>
-                            <th class="py-2 px-2">Kenteken</th>
-                            <th class="py-2 px-2">Bijzonderheden</th>
+                            <th class="py-2 px-4">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
+                                </span>
+                            </th>
+                            <th class="py-2 px-4">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnaam
+                                </span>
+                            </th>
+                            <th class="py-2 px-4">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                </span>
+                            </th>
+                            <th class="py-2 px-4">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
+                                </span>
+                            </th>
+                            <th class="py-2 px-4">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
+                                </span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="table-row-group">
-                            <td class="py-2 px-2" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
+                            <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
                         </tr>
                         <tr class="table-row-group">
-                            <td class="py-2 px-2"></td>
-                            <td class="py-2 px-2">15-5000</td>
-                            <td class="py-2 px-2">(DA) FRB</td>
-                            <td class="py-2 px-2">Dienstauto</td>
-                            <td class="py-2 px-2">VD-706-H</td>
+                            <td class="py-2 px-4"></td>
+                            <td class="py-2 px-4">15-5000</td>
+                            <td class="py-2 px-4">(DA) FRB</td>
+                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
+                            <td class="py-2 px-4">VD-706-H</td>
+                            <td class="py-2 px-4">Frani type CCFM</td>
                         </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-2" colspan="5">06-10 Hierden, Ooster Mheenweg 6</td>
-                        </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-2"></td>
-                            <td class="py-2 px-2">06-1001</td>
-                            <td class="py-2 px-2">DB 8</td>
-                            <td class="py-2 px-2">Dienstbus</td>
-                            <td class="py-2 px-2">3-SJF-50</td>
-                        </tr>
-                        <!-- Herhaal de bovenstaande rijen zoals nodig -->
+                        <!-- Voeg hier meer rijen toe indien nodig -->
                     </tbody>
                 </table>
             </div>
