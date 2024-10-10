@@ -17,6 +17,11 @@
         .table-row-group:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1);
         }
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body class="text-white">
@@ -64,58 +69,59 @@
             </div>
 
             <div class="overflow-x-auto">
-                <table class="min-w-full">
+                <table id="dataTable" class="min-w-full">
                     <thead>
-                        <tr class="text-left text-sm">
-                            <th class="py-2 px-4">Adres</th>
-                            <th class="py-2 px-4">Roepnaam</th>
-                            <th class="py-2 px-4">Type voertuig</th>
-                            <th class="py-2 px-4">Type Voertuig</th>
-                            <th class="py-2 px-4">Kenteken</th>
-                            <th class="py-2 px-4">Bijzonderheden</th>
+                        <tr class="bg-gray-800 text-left">
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
+                                </span>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4">15-50 Wassenaar, Johan de Wittstraat 39</td>
-                            <td class="py-2 px-4">15-5000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-706-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
+                        <tr>
+                            <td>06-10 Hierden, Ooster Mheenweg 6</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
                         </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4">16-20 Den Haag, Laan van Meerdervoort 109</td>
-                            <td class="py-2 px-4">16-2000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-707-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
+                        <tr>
+                            <td>Hierden</td>
+                            <td>06-1001</td>
+                            <td>DB 8</td>
+                            <td>Dienstbus</td>
+                            <td>3-SJF-50</td>
+                            <td> </td>
                         </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4">17-30 Utrecht, Vleutenseweg 61</td>
-                            <td class="py-2 px-4">17-3000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-708-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
-                        </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4">18-40 Amsterdam, Amsteldijk 123</td>
-                            <td class="py-2 px-4">18-4000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-709-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
-                        </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4">19-50 Rotterdam, Blaak 50</td>
-                            <td class="py-2 px-4">19-5000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-710-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
-                        </tr>
+                        <!-- Voeg hier extra rijen toe indien nodig -->
                     </tbody>
                 </table>
             </div>
