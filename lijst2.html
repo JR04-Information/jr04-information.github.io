@@ -2,7 +2,7 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Hulpvoertuigen Lijst Nederland</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -21,6 +21,10 @@
             width: 20px;
             height: 20px;
             margin-right: 5px;
+        }
+        /* Zorg ervoor dat de tabel altijd kan worden gescrold */
+        .overflow-x-auto {
+            overflow-x: auto;
         }
     </style>
 </head>
@@ -69,78 +73,61 @@
             </div>
 
             <div class="overflow-x-auto">
-                <div class="zoomable-table">
-                    <table id="dataTable" class="min-w-full">
-                        <thead>
-                            <tr class="bg-gray-800 text-left">
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
-                                    </span>
-                                </th>
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
-                                    </span>
-                                </th>
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
-                                    </span>
-                                </th>
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
-                                    </span>
-                                </th>
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
-                                    </span>
-                                </th>
-                                <th class="px-4 py-2">
-                                    <span class="flex items-center justify-center">
-                                        <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
-                                    </span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>06-10 Hierden, Ooster Mheenweg 6</td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-                                <td>Hierden</td>
-                                <td>06-1001</td>
-                                <td>DB 8</td>
-                                <td>Dienstbus</td>
-                                <td>3-SJF-50</td>
-                                <td> </td>
-                            </tr>
-                            <tr>
-<td>Friesland</td>
-<td>02-2940</td>
-<td>Aap</td>
-<td>Iets</td>
-<td>KENTEKEN</td>
-<td> </td>
-                            </tr>
-
-
-
-
-
-
-
-                            <!-- Voeg hier extra rijen toe indien nodig -->
-                        </tbody>
-                    </table>
-                </div>
+                <table id="dataTable" class="min-w-full">
+                    <thead>
+                        <tr class="bg-gray-800 text-left">
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
+                                </span>
+                            </th>
+                            <th class="px-4 py-2">
+                                <span class="flex items-center justify-center">
+                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>06-10 Hierden, Ooster Mheenweg 6</td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
+                        </tr>
+                        <tr>
+                            <td>Hierden</td>
+                            <td>06-1001</td>
+                            <td>DB 8</td>
+                            <td>Dienstbus</td>
+                            <td>3-SJF-50</td>
+                            <td> </td>
+                        </tr>
+                        <!-- Voeg hier extra rijen toe indien nodig -->
+                    </tbody>
+                </table>
             </div>
         </main>
     </div>
