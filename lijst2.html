@@ -12,13 +12,13 @@
             font-family: Arial, sans-serif;
         }
         .icon {
-            width: 16px; /* Iconen verkleind */
-            height: 16px; /* Iconen verkleind */
+            width: 20px; /* Huidige breedte van iconen */
+            height: 20px; /* Huidige hoogte van iconen */
             margin-right: 5px;
         }
         /* Zorg ervoor dat de tabel altijd kan worden gescrold */
-        .overflow-x-auto {
-            overflow-x: auto;
+        .table-wrapper {
+            overflow-x: auto; /* Zorg ervoor dat de tabel horizontaal kan scrollen */
         }
     </style>
 </head>
@@ -66,58 +66,58 @@
                 <p class="text-sm text-gray-400">Laatste update: 15-09-2024</p>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="table-wrapper"> <!-- Hier is de wrapper toegevoegd -->
                 <table id="dataTable" class="min-w-full">
                     <thead>
                         <tr class="bg-gray-800 text-left">
-                            <th class="px-2 py-2 text-xs"> <!-- Kolommen verkleind -->
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
                                     <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
                                 </span>
                             </th>
-                            <th class="px-2 py-2 text-xs">
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnr
+                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
                                 </span>
                             </th>
-                            <th class="px-2 py-2 text-xs">
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
                                 </span>
                             </th>
-                            <th class="px-2 py-2 text-xs">
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
                                 </span>
                             </th>
-                            <th class="px-2 py-2 text-xs">
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
                                     <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
                                 </span>
                             </th>
-                            <th class="px-2 py-2 text-xs">
+                            <th class="px-4 py-2">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijz.
+                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
                                 </span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="px-2 py-2 text-xs">06-10 Hierden, Ooster Mheenweg 6</td>
-                            <td class="px-2 py-2 text-xs"> </td>
-                            <td class="px-2 py-2 text-xs"> </td>
-                            <td class="px-2 py-2 text-xs"> </td>
-                            <td class="px-2 py-2 text-xs"> </td>
-                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="py-2 px-4">06-10 Hierden, Ooster Mheenweg 6</td>
+                            <td class="py-2 px-4"> </td>
+                            <td class="py-2 px-4"> </td>
+                            <td class="py-2 px-4"> </td>
+                            <td class="py-2 px-4"> </td>
+                            <td class="py-2 px-4"> </td>
                         </tr>
                         <tr>
-                            <td class="px-2 py-2 text-xs">Hierden</td>
-                            <td class="px-2 py-2 text-xs">06-1001</td>
-                            <td class="px-2 py-2 text-xs">DB 8</td>
-                            <td class="px-2 py-2 text-xs">Dienstbus</td>
-                            <td class="px-2 py-2 text-xs">3-SJF-50</td>
-                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="py-2 px-4">Hierden</td>
+                            <td class="py-2 px-4">06-1001</td>
+                            <td class="py-2 px-4">DB 8</td>
+                            <td class="py-2 px-4">Dienstbus</td>
+                            <td class="py-2 px-4">3-SJF-50</td>
+                            <td class="py-2 px-4"> </td>
                         </tr>
                         <!-- Voeg hier extra rijen toe indien nodig -->
                     </tbody>
