@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hulpvoertuigen Brandweer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="text-white flex flex-col">
+    <header class="p-4 flex justify-between items-center">
+        <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-800">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+            </svg>
+        </div>
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="text-blue-500 font-bold">Home</a></li>
+                <li><a href="#" class="text-gray-400">FAQ</a></li>
+                <li><a href="#" class="text-gray-400">API</a></li>
+                <li><a href="#" class="text-gray-400">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main class="flex-grow flex flex-col items-center justify-center p-8 text-center">
+        <div class="mb-8">
+            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+            </div>
+            <h1 class="text-4xl font-bold mb-2">Hulpvoertuigen</h1>
+            <h2 class="text-2xl mb-4">Brandweer</h2>
+            <p class="text-xl mb-8">Kies Regio</p>
+        </div>
+
+        <div class="w-full max-w-2xl flex justify-between">
+            <div class="w-5/12">
+                <h3 class="text-lg mb-2">Nederland</h3>
+                <select class="w-full bg-gray-700 text-white rounded p-2">
+                    <option>(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                </select>
+            </div>
+            <div class="w-5/12">
+                <h3 class="text-lg mb-2">België</h3>
+                <select class="w-full bg-gray-700 text-white rounded p-2">
+                    <option>(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <footer class="p-4">
+        <nav>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="#" class="text-gray-400">FAQ</a></li>
+                <li><a href="#" class="text-gray-400">API</a></li>
+                <li><a href="#" class="text-gray-400">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>
