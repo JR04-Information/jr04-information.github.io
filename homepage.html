@@ -103,9 +103,19 @@
     </main>
 
     <!-- Footer -->
-    <footer class="mt-16 bg-gray-900 p-4 text-center text-gray-400">
-        <p>Contact</p>
+    <footer>
+        &copy; 2024 - <span id="currentYear"></span> HulpdienstVoertuigenNL-BE. Alle rechten voorbehouden.
     </footer>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var currentYear = new Date().getFullYear();
+            var startYear = 2024;
+            var footerText = startYear + (currentYear > startYear ? " - " + currentYear : "");
+            document.getElementById('currentYear').textContent = footerText;
+        });
+    </script>
 </body>
 
 </html>
