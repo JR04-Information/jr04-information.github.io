@@ -11,15 +11,9 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
         }
-        .table-row-group:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .table-row-group:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
         .icon {
-            width: 20px;
-            height: 20px;
+            width: 16px; /* Iconen verkleind */
+            height: 16px; /* Iconen verkleind */
             margin-right: 5px;
         }
         /* Zorg ervoor dat de tabel altijd kan worden gescrold */
@@ -76,54 +70,54 @@
                 <table id="dataTable" class="min-w-full">
                     <thead>
                         <tr class="bg-gray-800 text-left">
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs"> <!-- Kolommen verkleind -->
                                 <span class="flex items-center justify-center">
                                     <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
                                 </span>
                             </th>
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
+                                    <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnr
                                 </span>
                             </th>
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type
                                 </span>
                             </th>
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                                    <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type
                                 </span>
                             </th>
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs">
                                 <span class="flex items-center justify-center">
                                     <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
                                 </span>
                             </th>
-                            <th class="px-4 py-2">
+                            <th class="px-2 py-2 text-xs">
                                 <span class="flex items-center justify-center">
-                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
+                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijz.
                                 </span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>06-10 Hierden, Ooster Mheenweg 6</td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
-                            <td> </td>
+                            <td class="px-2 py-2 text-xs">06-10 Hierden, Ooster Mheenweg 6</td>
+                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="px-2 py-2 text-xs"> </td>
+                            <td class="px-2 py-2 text-xs"> </td>
                         </tr>
                         <tr>
-                            <td>Hierden</td>
-                            <td>06-1001</td>
-                            <td>DB 8</td>
-                            <td>Dienstbus</td>
-                            <td>3-SJF-50</td>
-                            <td> </td>
+                            <td class="px-2 py-2 text-xs">Hierden</td>
+                            <td class="px-2 py-2 text-xs">06-1001</td>
+                            <td class="px-2 py-2 text-xs">DB 8</td>
+                            <td class="px-2 py-2 text-xs">Dienstbus</td>
+                            <td class="px-2 py-2 text-xs">3-SJF-50</td>
+                            <td class="px-2 py-2 text-xs"> </td>
                         </tr>
                         <!-- Voeg hier extra rijen toe indien nodig -->
                     </tbody>
