@@ -17,6 +17,31 @@
         .table-row-group:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1);
         }
+        @media (max-width: 640px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                display: none;
+            }
+            td {
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 45%;
+                padding-left: 10px;
+                white-space: nowrap;
+            }
+            td:nth-of-type(1):before { content: "Adres"; }
+            td:nth-of-type(2):before { content: "Roepnaam"; }
+            td:nth-of-type(3):before { content: "Type voertuig"; }
+            td:nth-of-type(4):before { content: "Kenteken"; }
+            td:nth-of-type(5):before { content: "Bijzonderheden"; }
+        }
     </style>
 </head>
 <body class="text-white">
@@ -86,7 +111,6 @@
                             <td class="py-2 px-4">VD-706-H</td>
                             <td class="py-2 px-4">Frani type CCFM</td>
                         </tr>
-                        <!-- Repeat the above <tr> 5 more times for each group of entries -->
                     </tbody>
                 </table>
             </div>
