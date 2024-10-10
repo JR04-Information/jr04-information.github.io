@@ -3,14 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hulpvoertuigen Lijst Nederland</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hulpdienst Voertuigen</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <style>
         body {
-            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
-            min-height: 100vh;
+            background: url('/files/images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             font-family: Arial, sans-serif;
-            color: white; /* Tekstkleur voor de hele pagina */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .gap-2 {
+            gap: 0.5rem;
+        }
+
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .text-gray-400 {
+            color: #ccc;
+        }
+
+        .bg-gray-600 {
+            background-color: #333;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        img.icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+        }
+
+        .dropdown-container {
+            margin-right: 0.5rem;
+        }
+
+        .dropdown-container select {
+            font-size: 1em;
+            padding: 0.3em 0.8em;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .nav-link {
+            background-color: #333;
+            color: #fff;
+            padding: 0.3em 0.8em;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-right: 0.5rem;
+        }
+
+        .nav-link:hover {
+            background-color: #4a5568;
+        }
+
+        .search-container {
+            margin-right: 0.5rem;
+        }
+
+        .search-container input[type=text] {
+            padding: 0.3em 0.8em;
+            border-radius: 10px;
+            border: none;
+            background-color: #333;
+            color: white;
         }
 
         .container {
@@ -29,8 +129,8 @@
         }
 
         footer {
-            background-color: #16213e; /* Gebruik de kleur van de achtergrond */
-            color: #ccc; /* Tekstkleur van de footer */
+            background-color: #333;
+            color: #ccc;
             text-align: center;
             padding: 10px;
             margin-top: auto;
@@ -39,10 +139,6 @@
         .table-container table {
             width: 100%;
             min-width: 1200px; /* Zorg ervoor dat de tabel niet te smal wordt */
-        }
-
-        .table-container {
-            height: 1200px; /* Stel de hoogte in voor de tabelcontainer */
         }
 
         table {
@@ -54,7 +150,6 @@
             padding: 8px;
             text-align: left;
             border: none; /* Geen randen meer */
-            color: white; /* Tekstkleur voor cellen */
         }
 
         th {
@@ -65,10 +160,6 @@
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.05); /* Alternating row colors for better readability */
-        }
-
-        tbody tr:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
         }
 
@@ -81,7 +172,6 @@
                 margin-bottom: 0.5rem;
             }
 
-            /* Verminder padding en font-size voor kleinere schermen */
             th, td {
                 padding: 4px; /* Verminder padding voor kleinere cellen */
                 font-size: 0.875rem; /* Kleinere tekst op mobiele apparaten */
@@ -90,8 +180,8 @@
     </style>
 </head>
 <body>
-    <div class="container mx-auto px-4 py-8">
-        <header class="flex justify-between items-center mb-8">
+    <div class="container">
+        <header class="flex justify-between mb-4">
             <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-800">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -99,15 +189,15 @@
             </div>
             <nav>
                 <ul class="flex space-x-4">
-                    <li><a href="#" class="text-gray-400">FAQ</a></li>
-                    <li><a href="#" class="text-gray-400">API</a></li>
-                    <li><a href="#" class="text-gray-400">Contact</a></li>
+                    <li><a href="#" class="nav-link">FAQ</a></li>
+                    <li><a href="#" class="nav-link">API</a></li>
+                    <li><a href="#" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main>
-            <div class="text-center mb-8">
+        <main class="flex-grow">
+            <div class="text-center mb-4">
                 <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10 text-white">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
@@ -117,24 +207,26 @@
                 <h2 class="text-2xl mb-4">Lijst Nederland</h2>
             </div>
 
-            <div class="mb-8">
-                <div class="flex items-center justify-between mb-4">
+            <div class="mb-4">
+                <div class="search-container flex items-center mb-2">
                     <div class="relative flex-grow mr-4">
-                        <input type="text" placeholder="Zoek een adres" class="w-full bg-gray-700 rounded-full py-2 px-4 pr-10">
+                        <input type="text" placeholder="Zoek een adres" class="w-full bg-gray-600 rounded-full py-2 px-4 pr-10">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                     </div>
                     <button class="bg-blue-500 text-white rounded-full px-4 py-2">Zoek nu!</button>
                 </div>
-                <select class="w-full bg-gray-700 text-white rounded p-2 mb-2">
-                    <option>(06) Veiligheidsregio Noord en Oost Gelderland</option>
-                </select>
+                <div class="dropdown-container mb-2">
+                    <select class="w-full bg-gray-600 text-white rounded p-2">
+                        <option>(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                    </select>
+                </div>
                 <p class="text-sm text-gray-400">Laatste update: 15-09-2024</p>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full">
+            <div class="table-container overflow-x-auto">
+                <table>
                     <thead>
                         <tr class="text-left text-sm">
                             <th class="py-2 px-4">
@@ -157,40 +249,4 @@
                                     <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
                                 </span>
                             </th>
-                            <th class="py-2 px-4">
-                                <span class="flex items-center justify-center">
-                                    <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
-                        </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4"></td>
-                            <td class="py-2 px-4">15-5000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-706-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
-                        </tr>
-                        <!-- Voeg hier meer rijen toe indien nodig -->
-                    </tbody>
-                </table>
-            </div>
-        </main>
-    </div>
-
-    <footer class="fixed bottom-0 left-0 right-0 p-4">
-        <nav>
-            <ul class="flex justify-center space-x-4">
-                <li><a href="#" class="text-gray-400">FAQ</a></li>
-                <li><a href="#" class="text-gray-400">API</a></li>
-                <li><a href="#" class="text-gray-400">Contact</a></li>
-            </ul>
-        </nav>
-    </footer>
-</body>
-</html>
+                            <th class="py
