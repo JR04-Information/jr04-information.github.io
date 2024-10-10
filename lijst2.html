@@ -17,33 +17,10 @@
         .table-row-group:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1);
         }
+        /* Zorg ervoor dat de tabel horizontaal kan scrollen op kleine schermen */
         @media (max-width: 640px) {
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-            thead {
-                display: none;
-            }
-            tbody, tr, td {
-                display: block;
-                width: 100%;
-            }
-            tr {
-                margin-bottom: 1rem;
-            }
-            td {
-                display: flex;
-                justify-content: space-between;
-                padding: 10px;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                position: relative;
-                text-align: left;
-            }
-            td:before {
-                content: attr(data-label);
-                font-weight: bold;
-                color: #ccc;
+            .table-container {
+                overflow-x: auto;
             }
         }
     </style>
@@ -92,7 +69,7 @@
                 <p class="text-sm text-gray-400">Laatste update: 15-09-2024</p>
             </div>
 
-            <div class="overflow-x-auto">
+            <div class="table-container">
                 <table class="w-full">
                     <thead>
                         <tr class="text-left text-sm">
@@ -108,12 +85,13 @@
                             <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
                         </tr>
                         <tr class="table-row-group">
-                            <td data-label="Adres" class="py-2 px-4"></td>
-                            <td data-label="Roepnaam" class="py-2 px-4">15-5000</td>
-                            <td data-label="Type voertuig" class="py-2 px-4">(DA) FRB</td>
-                            <td data-label="Kenteken" class="py-2 px-4">VD-706-H</td>
-                            <td data-label="Bijzonderheden" class="py-2 px-4">Frani type CCFM</td>
+                            <td class="py-2 px-4"></td>
+                            <td class="py-2 px-4">15-5000</td>
+                            <td class="py-2 px-4">(DA) FRB</td>
+                            <td class="py-2 px-4">VD-706-H</td>
+                            <td class="py-2 px-4">Frani type CCFM</td>
                         </tr>
+                        <!-- Herhaal het bovenstaande <tr> element voor meer gegevens -->
                     </tbody>
                 </table>
             </div>
