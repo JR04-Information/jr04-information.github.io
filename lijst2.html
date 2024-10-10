@@ -2,74 +2,105 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hulpvoertuigen Lijst Nederland</title>
-    <link rel="stylesheet" href="styles_lijst2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #1a1a2e, #16213e);
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        .table-row-group:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .table-row-group:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
+<body class="text-white">
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-800">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                </svg>
+            </div>
             <nav>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Contact</a></li>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="text-gray-400">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400">API</a></li>
+                    <li><a href="#" class="text-gray-400">Contact</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <h1>Hulpvoertuigen</h1>
-            <h2>Lijst Nederland</h2>
+            <div class="text-center mb-8">
+                <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-purple-600 rounded-xl mx-auto mb-4 flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-10 h-10 text-white">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </div>
+                <h1 class="text-4xl font-bold mb-2">Hulpvoertuigen</h1>
+                <h2 class="text-2xl mb-4">Lijst Nederland</h2>
+            </div>
 
-            <div class="table-responsive">
-                <table>
+            <div class="mb-8">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="relative flex-grow mr-4">
+                        <input type="text" placeholder="Zoek een adres" class="w-full bg-gray-700 rounded-full py-2 px-4 pr-10">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-400 absolute right-3 top-1/2 transform -translate-y-1/2">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <button class="bg-blue-500 text-white rounded-full px-4 py-2">Zoek nu!</button>
+                </div>
+                <select class="w-full bg-gray-700 text-white rounded p-2 mb-2">
+                    <option>(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                </select>
+                <p class="text-sm text-gray-400">Laatste update: 15-09-2024</p>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full">
                     <thead>
-                        <tr>
-                            <th>Adres</th>
-                            <th>Roepnaam</th>
-                            <th>Type voertuig</th>
-                            <th>Kenteken</th>
-                            <th>Bijzonderheden</th>
+                        <tr class="text-left text-sm">
+                            <th class="py-2 px-4">Adres</th>
+                            <th class="py-2 px-4">Roepnaam</th>
+                            <th class="py-2 px-4">Type voertuig</th>
+                            <th class="py-2 px-4">Kenteken</th>
+                            <th class="py-2 px-4">Bijzonderheden</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>15-50 Wassenaar, Johan de Wittstraat 39</td>
-                            <td>15-5000</td>
-                            <td>(DA) FRB</td>
-                            <td>VD-706-H</td>
-                            <td>Frani type CCFM</td>
+                        <tr class="table-row-group">
+                            <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
                         </tr>
-                        <tr>
-                            <td>15-51 Amsterdam, Damstraat 1</td>
-                            <td>15-6000</td>
-                            <td>(DA) FRB</td>
-                            <td>VD-707-H</td>
-                            <td>Frani type CCFM</td>
+                        <tr class="table-row-group">
+                            <td class="py-2 px-4"></td>
+                            <td class="py-2 px-4">15-5000</td>
+                            <td class="py-2 px-4">(DA) FRB</td>
+                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
+                            <td class="py-2 px-4">VD-706-H</td>
+                            <td class="py-2 px-4">Frani type CCFM</td>
                         </tr>
-                        <tr>
-                            <td>15-52 Rotterdam, Karel Doormanstraat 2</td>
-                            <td>15-7000</td>
-                            <td>(DA) FRB</td>
-                            <td>VD-708-H</td>
-                            <td>Frani type CCFM</td>
-                        </tr>
-                        <!-- Voeg hier meer voertuigen toe -->
+                        <!-- Repeat the above <tr> 5 more times for each group of entries -->
                     </tbody>
                 </table>
             </div>
         </main>
-
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">API</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </footer>
     </div>
+
+    <footer class="fixed bottom-0 left-0 right-0 p-4">
+        <nav>
+            <ul class="flex justify-center space-x-4">
+                <li><a href="#" class="text-gray-400">FAQ</a></li>
+                <li><a href="#" class="text-gray-400">API</a></li>
+                <li><a href="#" class="text-gray-400">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
 </body>
 </html>
