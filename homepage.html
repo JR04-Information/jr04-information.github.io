@@ -8,12 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-    background-image: url('files/images/background2.png'); /* Controleer dit pad */
-    background-size: cover; /* Zorgt ervoor dat de afbeelding het hele venster bedekt */
-    background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
-    background-position: center; /* Centreert de afbeelding */
-    height: 100vh; /* Zorgt ervoor dat de body de volledige hoogte van het venster heeft */
-}
+            background-image: url('files/images/background2.png'); /* Controleer dit pad */
+            background-size: cover; /* Zorg ervoor dat de afbeelding het hele venster bedekt */
+            background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
+            background-position: center; /* Centreert de afbeelding */
+            min-height: 100vh; /* Zorgt ervoor dat de body ten minste de hoogte van het venster heeft */
+            overflow-x: hidden; /* Voorkomt horizontaal scrollen */
+        }
 
         /* Voeg deze stijl toe om de afmetingen van de afbeeldingen te forceren */
         .image-box {
