@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Hulpvoertuigen Lijst Nederland</title>
     <link rel="stylesheet" href="styles_lijst2.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="text-white">
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-white">
     <div class="container mx-auto px-4 py-8">
         <header class="flex justify-between items-center mb-8">
             <nav>
@@ -19,45 +20,43 @@
         </header>
 
         <main>
-            <div class="text-center mb-8">
-                <h1 class="text-4xl font-bold mb-2">Hulpvoertuigen</h1>
-                <h2 class="text-2xl mb-4">Lijst Nederland</h2>
-            </div>
+            <h1 class="text-4xl font-bold text-center mb-2">Hulpvoertuigen</h1>
+            <h2 class="text-2xl text-center mb-4">Lijst Nederland</h2>
 
-            <div class="overflow-x-auto">
-                <table>
+            <div class="table-responsive">
+                <table class="min-w-full bg-gray-700">
                     <thead>
-                        <tr>
-                            <th>Adres</th>
-                            <th>Roepnaam</th>
-                            <th>Type voertuig</th>
-                            <th>Kenteken</th>
-                            <th>Bijzonderheden</th>
+                        <tr class="bg-gray-600">
+                            <th class="py-2 px-4">Adres</th>
+                            <th class="py-2 px-4">Roepnaam</th>
+                            <th class="py-2 px-4">Type voertuig</th>
+                            <th class="py-2 px-4">Kenteken</th>
+                            <th class="py-2 px-4">Bijzonderheden</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>15-50 Wassenaar, Johan de Wittstraat 39</td>
-                            <td>15-5000</td>
-                            <td>(DA) FRB</td>
-                            <td>VD-706-H</td>
-                            <td>Frani type CCFM</td>
+                        <tr class="hover:bg-gray-500">
+                            <td class="py-2 px-4">15-50 Wassenaar, Johan de Wittstraat 39</td>
+                            <td class="py-2 px-4">15-5000</td>
+                            <td class="py-2 px-4">(DA) FRB</td>
+                            <td class="py-2 px-4">VD-706-H</td>
+                            <td class="py-2 px-4">Frani type CCFM</td>
                         </tr>
-                        <!-- Herhaal bovenstaande <tr> voor elke groep van vermeldingen -->
+                        <!-- Herhaal de <tr> hier voor andere voertuigen -->
                     </tbody>
                 </table>
             </div>
         </main>
-    </div>
 
-    <footer class="fixed bottom-0 left-0 right-0 p-4">
-        <nav>
-            <ul class="flex justify-center space-x-4">
-                <li><a href="#" class="text-gray-400">FAQ</a></li>
-                <li><a href="#" class="text-gray-400">API</a></li>
-                <li><a href="#" class="text-gray-400">Contact</a></li>
-            </ul>
-        </nav>
-    </footer>
+        <footer class="fixed bottom-0 left-0 right-0 p-4">
+            <nav>
+                <ul class="flex justify-center space-x-4">
+                    <li><a href="#" class="text-gray-400">FAQ</a></li>
+                    <li><a href="#" class="text-gray-400">API</a></li>
+                    <li><a href="#" class="text-gray-400">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
 </body>
 </html>
