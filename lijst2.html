@@ -11,18 +11,52 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
         }
-        .table-row-group:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-        .table-row-group:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+       .table-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 10px; /* Voorkom dat de inhoud de footer overlapt */
+       }
+        .table-container table {
+    width: 100%;
+    min-width: 1200px; /* Zorg ervoor dat de tabel niet te smal wordt */
+}
+
+.table-container {
+    height: 1200px; /* Stel de hoogte in voor de tabelcontainer */
+}
+
         table {
-     display    : table;
-     max-width  : 100%;
-     box-sizing : border-box;
-     border-collapse: collapse;
+            width: 100%;
+            border-collapse: collapse;
         }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border: none; /* Geen randen meer */
+        }
+
+        th {
+            background-color: #444; /* Kleur van de bovenste rij */
+            color: white;
+            position: sticky; /* Blijft bovenaan tijdens scrollen */
+            top: 0;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
+        }
+
+        @media (max-width: 768px) {
+            .overflow-x-auto {
+                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
+            }
+
+            .bg-gray-600 {
+                margin-bottom: 0.5rem;
+            }
+        }
+        
 @media screen only and (max-width:765px){
     table {
         max-width  :100vw;  
@@ -77,28 +111,58 @@
             </div>
 
             <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead>
-                        <tr class="text-left text-sm">
-                            <th class="py-2 px-4">Adres</th>
-                            <th class="py-2 px-4">Roepnaam</th>
-                            <th class="py-2 px-4">Type voertuig</th>
-                            <th class="py-2 px-4">Kenteken</th>
-                            <th class="py-2 px-4">Bijzonderheden</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
-                        </tr>
-                        <tr class="table-row-group">
-                            <td class="py-2 px-4"></td>
-                            <td class="py-2 px-4">15-5000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">Dienstauto First Responder Brandweer</td>
-                            <td class="py-2 px-4">VD-706-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
-                        </tr>
+            <table id="dataTable">
+                <thead>
+                    <tr class="bg-gray-800">
+                        <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
+                            </span>
+                        </th>
+                        <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
+                            </span>
+                        </th>
+                        <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                            </span>
+                        </th>
+                           <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
+                            </span>
+                           </th>
+                        <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
+                            </span>
+                        </th>
+                        <th class="px-4 py-2">
+                            <span class="flex items-center justify-center">
+                                <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
+                            </span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+<td>07-11 Nijkerk, Havenstraat 5</td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr>
+<td>Nijkerk</td>
+<td>07-2003</td>
+<td>DA 5</td>
+<td>Dienstauto </td>
+<td>H-424-FG</td>
+<td> </td>
+</tr>
                         <!-- Repeat the above <tr> 5 more times for each group of entries -->
                     </tbody>
                 </table>
@@ -115,5 +179,33 @@
             </ul>
         </nav>
     </footer>
+    
+    <!-- JavaScript voor zoekfunctionaliteit -->
+    <script>
+        function searchTable() {
+            var input = document.getElementById('searchInput').value.toUpperCase();
+            var table = document.getElementById('dataTable');
+            var rows = table.getElementsByTagName('tr');
+            
+            for (var i = 1; i < rows.length; i++) {
+                var cells = rows[i].getElementsByTagName('td');
+                var rowContainsInput = false;
+
+                for (var j = 0; j < cells.length; j++) {
+                    var cellValue = cells[j].textContent || cells[j].innerText;
+                    if (cellValue.toUpperCase().indexOf(input) > -1) {
+                        rowContainsInput = true;
+                        break;
+                    }
+                }
+
+                if (rowContainsInput) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    </script>
 </body>
 </html>
