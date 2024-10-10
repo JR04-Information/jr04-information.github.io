@@ -2,6 +2,18 @@ body {
     background: linear-gradient(to bottom right, #1a1a2e, #16213e);
     min-height: 100vh;
     font-family: Arial, sans-serif;
+    margin: 0;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.table-responsive {
+    overflow-x: auto; /* Zorg ervoor dat de tabel kan scrollen op kleine schermen */
 }
 
 table {
@@ -16,17 +28,34 @@ th, td {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* Kleurstijlen voor de tabel */
+thead {
+    background-color: #2d2d72; /* Kleur voor de kop */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.05); /* Lichtere achtergrond voor oneven rijen */
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Donkere achtergrond voor even rijen */
+}
+
+tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover-effect voor rijen */
+}
+
 /* Responsieve stijlen voor mobiele apparaten */
 @media (max-width: 640px) {
-    table {
-        display: block; /* Maakt de tabel een block element */
-        overflow-x: auto; /* Zorgt ervoor dat je kunt scrollen als dat nodig is */
-        white-space: nowrap; /* Voorkomt dat de cellen zich onder elkaar rangschikken */
+    th, td {
+        padding: 8px; /* Verminder padding op mobiele apparaten */
     }
 
-    th, td {
-        display: inline-block; /* Laat de cellen inline zijn voor mobiel */
-        min-width: 150px; /* Zorg ervoor dat de cellen breed genoeg zijn */
-        text-align: center; /* Centeren van tekst in cellen */
+    th {
+        font-size: 14px; /* Kleinere lettergrootte voor de koppen */
+    }
+
+    td {
+        font-size: 12px; /* Kleinere lettergrootte voor de cellen */
     }
 }
