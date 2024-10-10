@@ -7,6 +7,7 @@
     <title>HulpdienstVoertuigenNL-BE</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Algemene stijlen voor de body */
         body {
             background-image: url('/files/images/background2.png'); /* Controleer dit pad */
             background-size: cover; /* Zorg ervoor dat de afbeelding het hele venster bedekt */
@@ -16,9 +17,9 @@
             overflow-x: hidden; /* Voorkomt horizontaal scrollen */
         }
 
+        /* Specifieke stijlen voor schermen tot 640px */
         @media (max-width: 640px) {
             body {
-                background-image: url('/files/images/background2.png'); /* Controleer dit pad */
                 background-size: cover; /* Zorg ervoor dat de afbeelding goed wordt weergegeven */
                 background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
                 background-position: center; /* Centreert de afbeelding */
@@ -32,15 +33,18 @@
             height: 200px;
         }
 
+        /* Stijlen voor het hoofdgedeelte */
         main {
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante zwarte achtergrond voor betere zichtbaarheid */
             padding: 20px; /* Voeg padding toe voor ruimte */
             border-radius: 8px; /* Hoekafgeronde randen */
+            max-width: 1200px; /* Max breedte voor desktop */
+            margin: 0 auto; /* Centreert het hoofdgedeelte */
         }
     </style>
 </head>
 
-<body class="text-white min-h-screen">
+<body class="text-white">
     <header class="flex flex-col md:flex-row justify-between items-center p-4">
         <div class="flex items-center space-x-2">
             <img src="https://placehold.co/40x40" alt="logo" class="w-10 h-10">
