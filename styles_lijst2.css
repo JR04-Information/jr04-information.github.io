@@ -21,33 +21,30 @@ th, td {
     padding: 8px;
     text-align: left;
     font-size: 14px;
+    word-wrap: break-word; /* Voorkom dat woorden uitlopen */
 }
 
-/* Stacked table layout for mobile devices */
+/* Stijl voor grotere schermen */
+@media (min-width: 640px) {
+    table {
+        table-layout: auto; /* Zorgt ervoor dat de tabelcellen automatisch worden aangepast */
+    }
+}
+
+/* Zorgen voor inzoomen op mobiele apparaten */
 @media (max-width: 640px) {
-    table, thead, tbody, th, td, tr {
-        display: block;
+    body {
+        touch-action: manipulation; /* Voorkom dat er automatisch wordt gescrold */
     }
-    thead tr {
-        display: none;
+    table {
+        width: 100%;
+        overflow-x: auto; /* Zorg ervoor dat je kunt scrollen als dat nodig is */
+        display: block; /* Zorg ervoor dat de tabel wordt weergegeven als een block-element */
+        white-space: nowrap; /* Voorkom dat de cellen zich onder elkaar rangschikken */
     }
-    tbody tr {
-        margin-bottom: 15px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    td {
-        font-size: 12px;
-        padding: 8px 6px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    td:before {
-        content: attr(data-label);
-        flex-basis: 40%;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.6);
-        font-weight: bold;
-        font-size: 12px;
+    th, td {
+        display: inline-block; /* Laat de cellen inline zijn voor mobiel */
+        min-width: 120px; /* Zorg ervoor dat de cellen breed genoeg zijn */
+        text-align: center; /* Centeren van tekst in cellen */
     }
 }
