@@ -66,7 +66,19 @@ tbody tr:hover {
         flex: 1; /* Zorgt ervoor dat alle cellen gelijk zijn en naast elkaar staan */
         padding: 8px; /* Verminder padding op mobiele apparaten */
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        text-align: center; /* Center de tekst */
+        text-align: left; /* Wijzig naar left voor betere leesbaarheid */
+    }
+
+    td {
+        position: relative; /* Voor de labels */
+        padding-left: 60px; /* Zorg ervoor dat er ruimte is voor labels */
+    }
+
+    .table-label {
+        position: absolute; /* Absolute positionering voor labels */
+        left: 10px; /* Plaatsing van de labels */
+        font-weight: bold; /* Dikkere tekst voor labels */
+        color: #ccc; /* Kleur voor de labels */
     }
 
     th {
