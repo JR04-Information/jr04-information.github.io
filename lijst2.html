@@ -17,10 +17,26 @@
         .table-row-group:nth-child(even) {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        /* Zorg ervoor dat de tabel horizontaal kan scrollen op kleine schermen */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+        /* Zorg dat de tabel altijd past op het scherm */
         @media (max-width: 640px) {
-            .table-container {
-                overflow-x: auto;
+            th, td {
+                font-size: 12px; /* Kleinere tekst voor mobiele apparaten */
+                padding: 6px; /* Minder padding op mobiele apparaten */
+            }
+            td {
+                word-wrap: break-word; /* Breek lange woorden af om ze te laten passen */
+            }
+            table {
+                table-layout: auto; /* Laat de tabel zich aanpassen aan de schermgrootte */
             }
         }
     </style>
@@ -69,29 +85,29 @@
                 <p class="text-sm text-gray-400">Laatste update: 15-09-2024</p>
             </div>
 
-            <div class="table-container">
-                <table class="w-full">
+            <div class="overflow-x-auto">
+                <table>
                     <thead>
                         <tr class="text-left text-sm">
-                            <th class="py-2 px-4">Adres</th>
-                            <th class="py-2 px-4">Roepnaam</th>
-                            <th class="py-2 px-4">Type voertuig</th>
-                            <th class="py-2 px-4">Kenteken</th>
-                            <th class="py-2 px-4">Bijzonderheden</th>
+                            <th>Adres</th>
+                            <th>Roepnaam</th>
+                            <th>Type voertuig</th>
+                            <th>Kenteken</th>
+                            <th>Bijzonderheden</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr class="table-row-group">
-                            <td class="py-2 px-4" colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
+                            <td colspan="5">15-50 Wassenaar, Johan de Wittstraat 39</td>
                         </tr>
                         <tr class="table-row-group">
-                            <td class="py-2 px-4"></td>
-                            <td class="py-2 px-4">15-5000</td>
-                            <td class="py-2 px-4">(DA) FRB</td>
-                            <td class="py-2 px-4">VD-706-H</td>
-                            <td class="py-2 px-4">Frani type CCFM</td>
+                            <td></td>
+                            <td>15-5000</td>
+                            <td>(DA) FRB</td>
+                            <td>VD-706-H</td>
+                            <td>Frani type CCFM</td>
                         </tr>
-                        <!-- Herhaal het bovenstaande <tr> element voor meer gegevens -->
+                        <!-- Meer gegevens -->
                     </tbody>
                 </table>
             </div>
