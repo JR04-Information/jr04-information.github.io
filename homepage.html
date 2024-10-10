@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            background-image: url('files/images/background2.png'); /* Controleer dit pad */
+            background-image: url('/files/images/background2.png'); /* Controleer dit pad */
             background-size: cover; /* Zorg ervoor dat de afbeelding het hele venster bedekt */
             background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
             background-position: center; /* Centreert de afbeelding */
@@ -16,10 +16,22 @@
             overflow-x: hidden; /* Voorkomt horizontaal scrollen */
         }
 
+        @media (max-width: 640px) {
+            body {
+                background-size: contain; /* Maakt de afbeelding volledig zichtbaar voor mobiele apparaten */
+            }
+        }
+
         /* Voeg deze stijl toe om de afmetingen van de afbeeldingen te forceren */
         .image-box {
             width: 300px;
             height: 200px;
+        }
+
+        main {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparante zwarte achtergrond voor betere zichtbaarheid */
+            padding: 20px; /* Voeg padding toe voor ruimte */
+            border-radius: 8px; /* Hoekafgeronde randen */
         }
     </style>
 </head>
