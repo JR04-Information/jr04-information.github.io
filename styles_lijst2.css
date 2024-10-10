@@ -24,27 +24,49 @@ th, td {
     word-wrap: break-word; /* Voorkom dat woorden uitlopen */
 }
 
-/* Stijl voor grotere schermen */
-@media (min-width: 640px) {
-    table {
-        table-layout: auto; /* Zorgt ervoor dat de tabelcellen automatisch worden aangepast */
-    }
-}
-
 /* Zorgen voor inzoomen op mobiele apparaten */
 @media (max-width: 640px) {
     body {
-        touch-action: manipulation; /* Voorkom dat er automatisch wordt gescrold */
+        overflow-x: auto; /* Voorkom dat de inhoud wordt afgesneden */
     }
+
     table {
-        width: 100%;
+        display: block; /* Zorg ervoor dat de tabel een blokelement is */
         overflow-x: auto; /* Zorg ervoor dat je kunt scrollen als dat nodig is */
-        display: block; /* Zorg ervoor dat de tabel wordt weergegeven als een block-element */
         white-space: nowrap; /* Voorkom dat de cellen zich onder elkaar rangschikken */
     }
+
     th, td {
         display: inline-block; /* Laat de cellen inline zijn voor mobiel */
-        min-width: 120px; /* Zorg ervoor dat de cellen breed genoeg zijn */
+        min-width: 150px; /* Zorg ervoor dat de cellen breed genoeg zijn */
         text-align: center; /* Centeren van tekst in cellen */
+    }
+
+    /* Dit zorgt ervoor dat de tabel goed uitgelijnd is */
+    thead {
+        display: none; /* Verberg de kop van de tabel */
+    }
+
+    tr {
+        display: flex;
+        flex-direction: column; /* Zorg ervoor dat rijen als kolommen worden weergegeven */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Voeg een scheidingslijn tussen rijen toe */
+    }
+
+    td {
+        border: none; /* Verberg de standaard randen van cellen */
+        text-align: left; /* Zorg ervoor dat de tekst aan de linkerkant begint */
+        padding: 10px;
+        position: relative; /* Zorg ervoor dat de labels goed worden weergegeven */
+    }
+
+    /* Labels voor mobiele weergave */
+    td::before {
+        content: attr(data-label); /* Laat de labeltekst zien */
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: bold;
+        color: #ccc; /* Een lichtere kleur voor labels */
     }
 }
