@@ -88,6 +88,96 @@
                     <h3 class="font-bold">Brandweer</h3>
                     <p class="text-sm text-gray-400">Gevaren voor mensen en dieren beperken en bestrijden</p>
                 </div>
+                <div class="bg-gray-800 p-6 <!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HulpdienstVoertuigenNL-BE</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Algemene stijlen voor de body */
+        body {
+            background-image: url('/files/images/background2.png'); /* Controleer dit pad */
+            background-size: cover; /* Zorg ervoor dat de afbeelding het hele venster bedekt */
+            background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
+            background-position: center; /* Centreert de afbeelding */
+            min-height: 100vh; /* Zorgt ervoor dat de body ten minste de hoogte van het venster heeft */
+            overflow-x: hidden; /* Voorkomt horizontaal scrollen */
+        }
+
+        /* Specifieke stijlen voor schermen tot 640px */
+        @media (max-width: 640px) {
+            body {
+                background-size: cover; /* Zorg ervoor dat de afbeelding goed wordt weergegeven */
+                background-repeat: no-repeat; /* Voorkomt dat de afbeelding herhaald wordt */
+                background-position: center top; /* Positioneert de afbeelding aan de bovenkant voor betere zichtbaarheid */
+                min-height: 100vh; /* Zorgt ervoor dat de body ten minste de hoogte van het venster heeft */
+            }
+        }
+
+        /* Stijlen voor het hoofdgedeelte */
+        main {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparante zwarte achtergrond voor betere zichtbaarheid */
+            padding: 40px; /* Voeg padding toe voor ruimte */
+            border-radius: 8px; /* Hoekafgeronde randen */
+            max-width: 1200px; /* Max breedte voor desktop */
+            margin: 0 auto; /* Centreert het hoofdgedeelte */
+        }
+
+        /* Voeg deze stijl toe om de afmetingen van de afbeeldingen te forceren */
+        .image-box {
+            width: 300px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+    <header class="flex flex-col md:flex-row justify-between items-center p-4">
+        <div class="flex items-center space-x-2">
+            <img src="files/images/icon.png" alt="logo" class="w-10 h-10">
+            <span class="text-lg font-bold">HulpdienstVoertuigenNL-BE</span>
+        </div>
+        <nav class="mt-2 md:mt-0 space-x-6 text-gray-300">
+            <a href="#" class="hover:text-white">Contact</a>
+        </nav>
+    </header>
+
+    <main class="flex flex-col items-center text-center mt-8 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold">Hulpvoertuigen</h1>
+        <p class="text-xl md:text-2xl mt-2">De beste hulpvoertuigen database voor de Benelux</p>
+
+        <!-- Image Section -->
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="flex flex-col items-center">
+                <img src="https://placehold.co/300x200" alt="Vehicle Image" class="image-box rounded-lg shadow-lg object-cover">
+                <p class="text-2xl font-bold mt-4">Voor Nederland en België!</p>
+                <p class="mt-2 text-gray-300">De lijst behoud informatie voor Nederland en België en is daardoor de beste database voor hulpvoertuigen in de Benelux.</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <img src="https://placehold.co/300x200" alt="Vehicle Image" class="image-box rounded-lg shadow-lg object-cover">
+                <p class="text-2xl font-bold mt-4">Betrouwbare Informatie</p>
+                <p class="mt-2 text-gray-300">De meest betrouwbare informatie wordt weergegeven op deze website, deze informatie komt van meerdere bronnen.</p>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <div class="mt-10 text-center">
+            <h2 class="text-4xl font-bold">Hulpdiensten</h2>
+            <p class="mt-2 text-gray-300">Op de lijst</p>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Politie</h3>
+                    <p class="text-sm text-gray-400">Helpt met beschermen, begrenzen en bekrachtigen</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Brandweer" class="mx-auto mb-4">
+                    <h3 class="font-bold">Brandweer</h3>
+                    <p class="text-sm text-gray-400">Gevaren voor mensen en dieren beperken en bestrijden</p>
+                </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
                     <img src="https://placehold.co/80x80" alt="Ambulance" class="mx-auto mb-4">
                     <h3 class="font-bold">Ambulance</h3>
@@ -135,9 +225,84 @@
                 </div>
             </div>
             <div class="mt-4 text-gray-300">
-            <p>of</p>
+            <p>Missende informatie? Neem dan contact met ons op!</p>
             <button class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 mt-2">Contact</button>
         </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-16 bg-gray-900 p-4 text-center text-gray-400">
+        &copy; 2024 - <span id="currentYear"></span> HulpdienstVoertuigenNL-BE. Alle rechten voorbehouden.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            var currentYear = new Date().getFullYear();
+            var startYear = 2024;
+            var footerText = startYear + (currentYear > startYear ? " - " + currentYear : "");
+            document.getElementById('currentYear').textContent = footerText;
+        });
+    </script>
+</body>
+
+</html>
+rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Ambulance" class="mx-auto mb-4">
+                    <h3 class="font-bold">Ambulance</h3>
+                    <p class="text-sm text-gray-400">Behandelen van patiënten en rijdende spoedafdeling</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Reddingsbrigade" class="mx-auto mb-4">
+                    <h3 class="font-bold">Reddingsbrigade</h3>
+                    <p class="text-sm text-gray-400">Eerste hulp en helpen zoeken naar vermiste mensen op zee</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Prorail</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT PRORAIL TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Rijkswaterstaat</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT RWS TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">KNRM</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT KNRM TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Ziekenhuizen</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT ZKH TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Meldkamers</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT Meldkamer TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Scholen</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT SCHOLEN TEKST</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-40 text-center mb-4">
+                    <img src="https://placehold.co/80x80" alt="Politie" class="mx-auto mb-4">
+                    <h3 class="font-bold">Provinciale Voertuigen</h3>
+                    <p class="text-sm text-gray-400">HIER KOMT PROVINCIALE VOERTUIGEN TEKST</p>
+                </div>
+            </div>
+            div class="mt-4">
+            <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500">Neem contact op</button>
+        </div>
+    </div>
+</div>
+
+<div class="mt-4 text-gray-300">
+    <p>Missende informatie? Neem dan contact met ons op!</p>
+    <a href="files/contact" class="bg-gray-700 text-white px-4 py-2 rounded-lg hover:bg-gray-600 mt-2 inline-block text-center">Contact</a>
+</div>
         </div>
     </main>
 
