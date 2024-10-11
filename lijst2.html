@@ -50,21 +50,22 @@
             justify-content: flex-start;
             min-height: 100vh;
             padding-top: 6rem; /* Ruimte voor de header */
+            width: 100%; /* Zorg ervoor dat het de volle breedte heeft */
         }
 
         .search-container {
             display: flex;
-            align-items: center; /* Horizontaal centreren */
-            justify-content: center; /* Centraal uitlijnen */
-            margin: 1rem 0;
+            align-items: center;
+            justify-content: center; /* Zorgt ervoor dat de elementen in het midden staan */
+            width: 100%; /* Zorg ervoor dat de zoekcontainer de volle breedte heeft */
+            max-width: 400px; /* Maximaal breedte voor de zoekcontainer */
         }
 
         .search-container input {
             padding: 0.5rem;
             border-radius: 5px 0 0 5px; /* Alleen de linker hoeken afgerond */
             border: none;
-            width: 100%;
-            max-width: 250px; /* Maak het iets smaller */
+            width: 100%; /* Maak het de volle breedte van de container */
             background-color: #333; /* Zelfde kleur als de header */
             color: white; /* Witte tekst voor de zoekbalk */
         }
@@ -87,11 +88,12 @@
             margin-top: 1rem; /* Ruimte tussen de zoekknop en de dropdown */
             display: flex;
             justify-content: center; /* Zorgt ervoor dat de dropdown gecentreerd is */
+            width: 100%; /* Zorg ervoor dat de dropdowncontainer de volle breedte heeft */
+            max-width: 400px; /* Maximaal breedte voor de dropdowncontainer */
         }
 
         .dropdown-container select {
-            width: 100%;
-            max-width: 250px; /* Maak het iets smaller */
+            width: 100%; /* Maak het de volle breedte van de container */
             padding: 0.3em 0.8em;
             border: none;
             border-radius: 5px; /* Afgeronde hoeken voor de dropdown */
@@ -175,53 +177,60 @@
             <tbody>
                 <tr>
                     <td>Voertuig 1</td>
-                    <td>Brandweerwagen</td>
-                    <td>Groningen</td>
+                    <td>Type A</td>
+                    <td>Regio 1</td>
                     <td>Actief</td>
                 </tr>
                 <tr>
                     <td>Voertuig 2</td>
-                    <td>Ambulance</td>
-                    <td>Friesland</td>
+                    <td>Type B</td>
+                    <td>Regio 2</td>
                     <td>Inactief</td>
                 </tr>
                 <tr>
                     <td>Voertuig 3</td>
-                    <td>Politieauto</td>
-                    <td>Drenthe</td>
+                    <td>Type C</td>
+                    <td>Regio 3</td>
                     <td>Actief</td>
                 </tr>
                 <tr>
                     <td>Voertuig 4</td>
-                    <td>Brandweerwagen</td>
-                    <td>Utrecht</td>
-                    <td>In onderhoud</td>
+                    <td>Type D</td>
+                    <td>Regio 4</td>
+                    <td>Inactief</td>
+                </tr>
+                <tr>
+                    <td>Voertuig 5</td>
+                    <td>Type E</td>
+                    <td>Regio 5</td>
+                    <td>Actief</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <footer>
-        &copy; 2024 Hulpdiensten Overzicht
+        <!-- Footer inhoud -->
+        <p>&copy; 2024 Hulpdienst Voertuigen. Alle rechten voorbehouden.</p>
     </footer>
 
     <script>
-        // Zoekfunctie voor de tabel
+        // Voorbeeld zoekfunctie
         function searchFunction() {
-            var input, filter, table, tr, td, i, txtValue;
+            var input, filter, table, tr, td, i, j, txtValue;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
             table = document.getElementById("vehicleTable");
             tr = table.getElementsByTagName("tr");
 
             for (i = 1; i < tr.length; i++) {
-                tr[i].style.display = "none";
+                tr[i].style.display = "none"; // Verberg alle rijen
                 td = tr[i].getElementsByTagName("td");
-                for (var j = 0; j < td.length; j++) {
+                for (j = 0; j < td.length; j++) {
                     if (td[j]) {
                         txtValue = td[j].textContent || td[j].innerText;
                         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = "";
+                            tr[i].style.display = ""; // Toont de rij als het overeenkomt
                             break;
                         }
                     }
