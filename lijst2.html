@@ -52,13 +52,18 @@
             padding-top: 6rem; /* Ruimte voor de header */
         }
 
+        .search-dropdown-container {
+            display: flex;
+            flex-direction: column; /* Maak de elementen onder elkaar */
+            align-items: center; /* Centreer de elementen */
+            width: 100%; /* Zorg ervoor dat het de volledige breedte gebruikt */
+        }
+
         .search-container {
             display: flex;
             justify-content: center; /* Center de inhoud van de container */
             align-items: center;
             margin: 1rem 0;
-            width: 100%; /* Volledige breedte voor de container */
-            max-width: 600px; /* Max breedte voor de zoekbalk container */
         }
 
         .search-container input {
@@ -89,8 +94,6 @@
             margin: 1rem 0;
             display: flex; /* Flex voor centreren */
             justify-content: center; /* Center de dropdown */
-            width: 100%; /* Volledige breedte voor de dropdown container */
-            max-width: 600px; /* Max breedte voor de dropdown container */
         }
 
         .dropdown-container select {
@@ -147,23 +150,25 @@
     </header>
 
     <div class="content-wrapper">
-        <!-- Zoekbalk direct onder de header -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
-            <button onclick="searchFunction()">ZOEKEN</button>
-        </div>
+        <div class="search-dropdown-container">
+            <!-- Zoekbalk direct onder de header -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
+                <button onclick="searchFunction()">ZOEKEN</button>
+            </div>
 
-        <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
-        <div class="dropdown-container">
-            <select onchange="if (this.value) window.location.href=this.value;">
-                <option value="">Selecteer een veiligheidsregio</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                <!-- Voeg hier meer opties toe -->
-            </select>
+            <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
+            <div class="dropdown-container">
+                <select onchange="if (this.value) window.location.href=this.value;">
+                    <option value="">Selecteer een veiligheidsregio</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                    <!-- Voeg hier meer opties toe -->
+                </select>
+            </div>
         </div>
     </div>
 
