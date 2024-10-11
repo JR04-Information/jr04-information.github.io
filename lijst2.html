@@ -50,24 +50,24 @@
             justify-content: flex-start;
             min-height: 100vh;
             padding-top: 6rem; /* Ruimte voor de header */
-            width: 100%;
         }
 
         .search-container {
             display: flex;
-            justify-content: center;
+            justify-content: center; /* Center de inhoud van de container */
             align-items: center;
             margin: 1rem 0;
-            width: 100%; /* Zorgt ervoor dat het zich uitstrekt over de breedte */
+            width: 100%; /* Volledige breedte voor de container */
         }
 
         .search-container input {
             padding: 0.5rem;
             border-radius: 5px;
             border: none;
-            width: 100%;
-            max-width: 200px; /* Breedte van de zoekbalk */
             background-color: #888; /* Donkerdere grijze achtergrond voor de zoekbalk */
+            color: white; /* Tekstkleur van de zoekbalk */
+            width: 100%;
+            max-width: 200px; /* Max breedte van de zoekbalk */
         }
 
         .search-container button {
@@ -87,11 +87,13 @@
 
         .dropdown-container {
             margin: 1rem 0;
+            display: flex; /* Flex voor centreren */
+            justify-content: center; /* Center de dropdown */
         }
 
         .dropdown-container select {
             width: 100%;
-            max-width: 200px; /* Breedte van de dropdown */
+            max-width: 200px; /* Max breedte van de dropdown */
             margin: 0.5rem 0;
             font-size: 1em;
             padding: 0.3em 0.8em;
