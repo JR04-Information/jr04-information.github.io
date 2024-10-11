@@ -39,6 +39,18 @@
             background-color: #555;
         }
 
+        header .contact-link {
+            background-color: #4682B4; /* Dezelfde kleur blauw als de ZOEKEN knop */
+            margin-right: 1rem; /* Knop iets naar binnen verschoven */
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            color: white;
+        }
+
+        header .contact-link:hover {
+            background-color: #4169E1; /* Kleurverandering bij hover naar royal blue */
+        }
+
         .content-wrapper {
             display: flex;
             flex-direction: column;
@@ -134,7 +146,7 @@
     <header>
         <!-- Navigatieknoppen in de header -->
         <a href="/" class="nav-link">Dashboard</a>
-        <a href="/contact" class="nav-link">Contact</a>
+        <a href="/contact" class="contact-link">Contact</a>
     </header>
 
     <div class="content-wrapper">
