@@ -19,77 +19,71 @@
         }
 
         .header {
-            background-color: #333; /* Grijze kleur voor de header */
+            background-color: #444; /* Grijze kleur voor de header */
             padding: 10px;
             display: flex;
-            justify-content: flex-end; /* Plaatst knoppen aan de rechterkant */
-            gap: 20px;
+            justify-content: flex-end; /* Knoppen aan de rechterkant */
         }
 
-        .nav-link {
-            color: #ccc;
-            text-decoration: none;
-            padding: 0.5em;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+        .header a {
+            color: gray; /* Normale kleur voor de knoppen */
+            margin-left: 15px;
+            text-decoration: none; /* Geen onderlijn */
         }
 
-        .nav-link:hover {
-            background-color: #555;
-        }
-
-        .search-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .search-container input[type="text"] {
-            background-color: #444; /* Donkergrijze kleur voor de zoekbalk */
-            color: white;
-            padding: 0.5em;
-            border-radius: 5px;
-            border: none;
-            width: 300px;
-        }
-
-        .search-button {
-            background-color: #1E90FF; /* Royal Blue */
-            color: white;
-            padding: 0.5em 1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .dropdown-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        select {
-            padding: 0.5em;
-            border-radius: 5px;
-            background-color: #333;
-            color: #fff;
-            border: none;
+        .header a:hover {
+            color: royalblue; /* Blauw bij hover */
         }
 
         .container {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            flex: 1;
+            align-items: center; /* Elementen centreren */
+            padding: 20px;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
         }
 
-        .table-container {
-            flex: 1;
-            overflow-y: auto;
-            padding-bottom: 10px; /* Voorkom dat de inhoud de footer overlapt */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px; /* Ruimte onder de zoekbalk */
+        }
+
+        .search-container input[type="text"] {
+            background-color: #333; /* Donkergrijze zoekbalk */
+            color: white; /* Witte tekst */
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-right: 5px; /* Ruimte tussen zoekbalk en knop */
+        }
+
+        .search-container button {
+            background-color: royalblue; /* Zoekknop kleur */
+            color: white; /* Witte tekst */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: darkblue; /* Donkerdere blauwe kleur bij hover */
+        }
+
+        .dropdown-container {
+            margin-top: 10px; /* Ruimte boven de dropdown */
+        }
+
+        .dropdown-container select {
+            font-size: 1em;
+            padding: 0.5em 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #333; /* Zelfde kleur als zoekbalk */
+            color: #fff;
         }
 
         footer {
@@ -124,26 +118,32 @@
         }
 
         @media (max-width: 768px) {
-            .overflow-x-auto {
-                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
+            .header {
+                flex-direction: column; /* Stapel de knoppen op elkaar */
+                align-items: flex-end; /* Knoppen aan de rechterkant */
             }
             .search-container {
-                flex-direction: column; /* Stapelen op kleinere schermen */
-                align-items: center;
+                flex-direction: column; /* Stapel zoekbalk en knop op elkaar */
+                align-items: center; /* Center elementen */
+            }
+            .search-container input[type="text"], 
+            .search-container button {
+                width: 100%; /* Maak ze breed op mobiele apparaten */
+                margin: 5px 0; /* Ruimte tussen elementen */
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <a href="/index.html" class="nav-link">Dashboard</a>
-        <a href="/files/contact.html" class="nav-link">Contact</a>
+        <a href="/index.html">Dashboard</a>
+        <a href="/files/contact.html">Contact</a>
     </div>
 
-    <div class="container mx-auto p-4">
+    <div class="container">
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchFunction()">
-            <button class="search-button" onclick="searchFunction()">Zoeken</button>
+            <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchTable()">
+            <button onclick="searchFunction()">Zoeken</button>
         </div>
 
         <div class="dropdown-container">
@@ -156,7 +156,7 @@
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
@@ -168,68 +168,82 @@
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
                 <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrz/brandweer">(19) Veiligheidsregio Zeeland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrfl/brandweer">(20) Veiligheidsregio Flevoland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/ifv/brandweer">(21) Instituut Fysieke Veiligheid</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/def/brandweer">(22) Defensie</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrmwb/brandweer">(20) Veiligheidsregio Midden en west Brabant</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbn/brandweer">(21) Veiligheidsregio Brabant-Noord</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbzo/brandweer">(22) Veiligheidsregio Brabant Zuid Oost</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbr/brandweer">(23) Veiligheidsregio Brabant-Rivierenland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vra/brandweer">(24) Veiligheidsregio Limburg-Noord</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrg/brandweer">(25) Veiligheidsregio Limburg-Zuid</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrp/brandweer">(26) Veiligheidsregio Zeeland-West-Brabant</option>
             </select>
         </div>
 
-        <div class="table-container overflow-x-auto">
-            <table id="dataTable">
-                <thead>
-                    <tr class="bg-gray-800">
-                        <th class="px-4 py-2">Adres</th>
-                        <th class="px-4 py-2">Roepnummer</th>
-                        <th class="px-4 py-2">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Hoofdstraat 1, Groningen</td>
-                        <td>1234</td>
-                        <td>Beschikbaar</td>
-                    </tr>
-                    <tr>
-                        <td>Hoofdstraat 2, Friesland</td>
-                        <td>5678</td>
-                        <td>In gebruik</td>
-                    </tr>
-                    <tr>
-                        <td>Hoofdstraat 3, Drenthe</td>
-                        <td>91011</td>
-                        <td>Onderhoud</td>
-                    </tr>
-                    <!-- Voeg hier meer rijen toe indien nodig -->
-                </tbody>
-            </table>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Voertuig</th>
+                    <th>Type</th>
+                    <th>Kenteken</th>
+                    <th>Regio</th>
+                    <th>Acties</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Voorbeeldrijen, deze moeten dynamisch worden gegenereerd -->
+                <tr>
+                    <td>Voertuig 1</td>
+                    <td>Brandweerauto</td>
+                    <td>AB-123-CD</td>
+                    <td>Groningen</td>
+                    <td><button>Bekijk</button></td>
+                </tr>
+                <tr>
+                    <td>Voertuig 2</td>
+                    <td>Ambulance</td>
+                    <td>EF-456-GH</td>
+                    <td>Friesland</td>
+                    <td><button>Bekijk</button></td>
+                </tr>
+                <tr>
+                    <td>Voertuig 3</td>
+                    <td>Politieauto</td>
+                    <td>IJ-789-KL</td>
+                    <td>Drenthe</td>
+                    <td><button>Bekijk</button></td>
+                </tr>
+                <!-- Einde voorbeeldrijen -->
+            </tbody>
+        </table>
     </div>
 
     <footer>
-        &copy; 2024 Hulpdiensten. Alle rechten voorbehouden.
+        <p>&copy; 2024 Hulpdienst Voertuigen. Alle rechten voorbehouden.</p>
     </footer>
 
     <script>
         function searchFunction() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById('dataTable');
-            const tr = table.getElementsByTagName('tr');
+            // Functie om de zoekactie uit te voeren
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const table = document.querySelector('table tbody');
+            const rows = table.querySelectorAll('tr');
 
-            for (let i = 1; i < tr.length; i++) {
-                const td = tr[i].getElementsByTagName('td');
-                let rowContainsSearchTerm = false;
-                for (let j = 0; j < td.length; j++) {
-                    if (td[j]) {
-                        const txtValue = td[j].textContent || td[j].innerText;
-                        if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                            rowContainsSearchTerm = true;
-                            break;
-                        }
+            rows.forEach(row => {
+                const cells = row.querySelectorAll('td');
+                let found = false;
+
+                cells.forEach(cell => {
+                    if (cell.textContent.toLowerCase().includes(input)) {
+                        found = true;
                     }
-                }
-                tr[i].style.display = rowContainsSearchTerm ? "" : "none";
-            }
+                });
+
+                row.style.display = found ? '' : 'none';
+            });
+        }
+
+        function searchTable() {
+            // Event handler voor het in realtime zoeken
+            searchFunction();
         }
     </script>
 </body>
