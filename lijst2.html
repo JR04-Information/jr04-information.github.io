@@ -40,23 +40,42 @@
         }
 
         .content-wrapper {
-            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
-            padding-top: 5rem; /* Zorgt voor ruimte onder de header */
+            padding-top: 6rem; /* Ruimte voor de header */
         }
 
-        .flex {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+        .search-container, .dropdown-container {
+            margin: 1rem 0;
         }
 
-        .dropdown-container select, .search-container input {
+        .search-container input {
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: none;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .search-container button {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: none;
+            background-color: blue;
+            color: white;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: darkblue;
+        }
+
+        .dropdown-container select {
             width: 100%;
             max-width: 300px;
             margin: 0.5rem 0;
@@ -111,24 +130,23 @@
     </header>
 
     <div class="content-wrapper">
-        <div class="flex">
-            <!-- Dropdown voor veiligheidsregio's -->
-            <div class="dropdown-container">
-                <select onchange="if (this.value) window.location.href=this.value;">
-                    <option value="">Selecteer een veiligheidsregio</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                    <!-- Voeg hier meer opties toe -->
-                </select>
-            </div>
+        <!-- Zoekbalk direct onder de header -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
+            <button onclick="searchFunction()">ZOEKEN</button>
+        </div>
 
-            <!-- Zoekbalk -->
-            <div class="search-container">
-                <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Zoek op voertuig of type...">
-            </div>
+        <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
+        <div class="dropdown-container">
+            <select onchange="if (this.value) window.location.href=this.value;">
+                <option value="">Selecteer een veiligheidsregio</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                <!-- Voeg hier meer opties toe -->
+            </select>
         </div>
     </div>
 
