@@ -16,107 +16,44 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            justify-content: center;
+            align-items: center; /* Centreert de inhoud horizontaal */
+        }
+
+        .content-wrapper {
+            text-align: center; /* Zorgt ervoor dat de inhoud gecentreerd is */
         }
 
         .flex {
             display: flex;
+            flex-direction: column; /* Zorgt ervoor dat items onder elkaar staan */
             align-items: center;
+            gap: 1rem; /* Voegt ruimte toe tussen de items */
         }
 
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .gap-2 {
-            gap: 0.5rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .text-gray-400 {
-            color: #ccc;
-        }
-
-        .bg-gray-600 {
+        .dropdown-container select, .search-container input, .nav-link {
+            width: 100%;
+            max-width: 300px; /* Beperkt de breedte van de dropdown, zoekbalk en knoppen */
+            margin: 0.5rem 0;
+            font-size: 1em;
+            padding: 0.3em 0.8em;
+            border: none;
+            border-radius: 10px;
             background-color: #333;
+            color: #fff;
         }
 
-        .rounded-lg {
-            border-radius: 0.5rem;
-        }
-
-        .px-2 {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-
-        .py-1 {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-4 {
-            margin-top: 1rem;
-        }
-
-        img.icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 4px;
-        }
-
-        /* Stijl voor oude dropdown en zoekbalk */
-        .dropdown-container select,
-        .search-container input[type=text],
-        .nav-link {
-            background-color: #222;
-            border: 1px solid #555;
-            padding: 5px;
-            color: white;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-
-        .dropdown-container select:hover,
-        .search-container input[type=text]:hover,
-        .nav-link:hover {
-            background-color: #333;
-        }
-
-        /* Stijl voor knoppen */
         .nav-link {
             text-decoration: none;
-            margin-right: 8px;
+            background-color: #333;
+            padding: 0.3em 0.8em;
+            border-radius: 10px;
+            color: white;
+            display: inline-block;
         }
 
-        .search-container input[type=text] {
-            padding: 5px;
-            font-size: 14px;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .table-container {
-            flex: 1;
-            overflow-y: auto;
-            padding-bottom: 10px; /* Voorkom dat de inhoud de footer overlapt */
+        .nav-link:hover {
+            background-color: #4a5568;
         }
 
         footer {
@@ -127,10 +64,15 @@
             margin-top: auto;
         }
 
+        .table-container {
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px; /* Zorg ervoor dat de tabel niet te smal wordt */
+            min-width: 600px;
         }
 
         th, td {
@@ -140,109 +82,80 @@
         }
 
         th {
-            background-color: #444; /* Kleur van de bovenste rij */
+            background-color: #444;
             color: white;
-            position: sticky; /* Blijft bovenaan tijdens scrollen */
-            top: 0;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
-        }
-
-        @media (max-width: 768px) {
-            .overflow-x-auto {
-                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
-            }
+            background-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
-    <div class="container mx-auto p-4">
-        <div class="flex justify-between items-center mb-4">
-            <div class="text-gray-400">Laatste update: 29-09-2024</div>
-            <div class="flex gap-2">
-                <!-- Dropdown voor veiligheidsregio's -->
-                <div class="dropdown-container">
-                    <select onchange="if (this.value) window.location.href=this.value;">
-                        <option value="">Selecteer een veiligheidsregio</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrk/brandweer">(12) Veiligheidsregio Kennemerland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vraa/brandweer">(13) Veiligheidsregio Amsterdam-Amstelland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgv/brandweer">(14) Veiligheidsregio Gooi en Vechtstreek</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrh/brandweer">(15) Veiligheidsregio Haaglanden</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrhm/brandweer">(16) Veiligheidsregio Hollands Midden</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrz/brandweer">(19) Veiligheidsregio Zeeland</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrmwb/brandweer">(20) Veiligheidsregio Midden en west Brabant</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbn/brandweer">(21) Veiligheidsregio Brabant-Noord</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbzo/brandweer">(22) Veiligheidsregio Brabant Zuid Oost</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrln/brandweer">(23) Veiligheidsregio Limburg-Noord</option>
-                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzl/brandweer">(24) Veiligheidsregio Zuid-Limburg</option>
-                    </select>
-                </div>
-
-                <!-- Zoekbalk -->
-                <div class="search-container">
-                    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Zoek op voertuig of type...">
-                </div>
-
-                <!-- Navigatieknoppen -->
-                <a href="/" class="nav-link">Dashboard</a>
-                <a href="/contact" class="nav-link">Contact</a>
+    <div class="content-wrapper">
+        <div class="flex">
+            <!-- Dropdown voor veiligheidsregio's -->
+            <div class="dropdown-container">
+                <select onchange="if (this.value) window.location.href=this.value;">
+                    <option value="">Selecteer een veiligheidsregio</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                    <!-- Voeg hier meer opties toe -->
+                </select>
             </div>
-        </div>
 
-        <!-- Tabel met voertuigen -->
-        <div class="table-container">
-            <table id="vehicleTable">
-                <thead>
-                    <tr>
-                        <th>Voertuig</th>
-                        <th>Type</th>
-                        <th>Regio</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Voertuig 1</td>
-                        <td>Brandweerwagen</td>
-                        <td>Groningen</td>
-                        <td>Actief</td>
-                    </tr>
-                    <tr>
-                        <td>Voertuig 2</td>
-                        <td>Ambulance</td>
-                        <td>Friesland</td>
-                        <td>Inactief</td>
-                    </tr>
-                    <tr>
-                        <td>Voertuig 3</td>
-                        <td>Politieauto</td>
-                        <td>Drenthe</td>
-                        <td>Actief</td>
-                    </tr>
-                    <tr>
-                        <td>Voertuig 4</td>
-                        <td>Brandweerwagen</td>
-                        <td>Utrecht</td>
-                        <td>In onderhoud</td>
-                    </tr>
-                </tbody>
-            </table>
+            <!-- Zoekbalk -->
+            <div class="search-container">
+                <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Zoek op voertuig of type...">
+            </div>
+
+            <!-- Navigatieknoppen -->
+            <a href="/" class="nav-link">Dashboard</a>
+            <a href="/contact" class="nav-link">Contact</a>
         </div>
+    </div>
+
+    <!-- Tabel met voertuigen -->
+    <div class="table-container">
+        <table id="vehicleTable">
+            <thead>
+                <tr>
+                    <th>Voertuig</th>
+                    <th>Type</th>
+                    <th>Regio</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Voertuig 1</td>
+                    <td>Brandweerwagen</td>
+                    <td>Groningen</td>
+                    <td>Actief</td>
+                </tr>
+                <tr>
+                    <td>Voertuig 2</td>
+                    <td>Ambulance</td>
+                    <td>Friesland</td>
+                    <td>Inactief</td>
+                </tr>
+                <tr>
+                    <td>Voertuig 3</td>
+                    <td>Politieauto</td>
+                    <td>Drenthe</td>
+                    <td>Actief</td>
+                </tr>
+                <tr>
+                    <td>Voertuig 4</td>
+                    <td>Brandweerwagen</td>
+                    <td>Utrecht</td>
+                    <td>In onderhoud</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
     <footer>
