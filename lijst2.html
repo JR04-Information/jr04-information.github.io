@@ -13,92 +13,119 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-        }
-
-        header {
-            background-color: #333; /* Kleur van de header */
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            display: flex;
-            justify-content: flex-end; /* Align links naar rechts */
-            align-items: center;
-            z-index: 1000;
-        }
-
-        header .dashboard-link {
-            text-decoration: none;
-            color: #ccc; /* Grijze kleur voor de dashboard knop */
-            margin-right: 1rem; /* Ruimte tussen de knoppen */
-        }
-
-        header .contact-link {
-            text-decoration: none; /* Geen onderstreepte tekst */
-            color: #ccc; /* Grijze kleur voor de contact knop */
-            margin-right: 1rem; /* Ruimte tussen de knoppen */
-        }
-
-        header .contact-link:hover {
-            color: #1E90FF; /* Donkerdere blauw bij hover */
-        }
-
-        .content-wrapper {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             min-height: 100vh;
-            padding-top: 6rem; /* Ruimte voor de header */
-            width: 100%; /* Zorg ervoor dat het de volle breedte heeft */
         }
 
-        .search-container {
+        .flex {
             display: flex;
             align-items: center;
-            justify-content: center; /* Zorgt ervoor dat de elementen in het midden staan */
-            width: 100%; /* Zorg ervoor dat de zoekcontainer de volle breedte heeft */
-            max-width: 400px; /* Maximaal breedte voor de zoekcontainer */
         }
 
-        .search-container input {
-            padding: 0.5rem;
-            border-radius: 5px 0 0 5px; /* Alleen de linker hoeken afgerond */
-            border: none;
-            width: 100%; /* Maak het de volle breedte van de container */
-            background-color: #333; /* Zelfde kleur als de header */
-            color: white; /* Witte tekst voor de zoekbalk */
+        .justify-between {
+            justify-content: space-between;
         }
 
-        .search-container button {
-            padding: 0.5rem 1rem;
-            border-radius: 0 5px 5px 0; /* Alleen de rechter hoeken afgerond */
-            border: none;
-            background-color: #4169E1; /* Royal Blue kleur voor de knop */
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
+        .gap-2 {
+            gap: 0.5rem;
         }
 
-        .search-container button:hover {
-            background-color: #1E90FF; /* Donkerdere blauw bij hover */
+        .mb-4 {
+            margin-bottom: 1rem;
+        }
+
+        .text-gray-400 {
+            color: #ccc;
+        }
+
+        .bg-gray-600 {
+            background-color: #333;
+        }
+
+        .rounded-lg {
+            border-radius: 0.5rem;
+        }
+
+        .px-2 {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+
+        .py-1 {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+
+        .text-sm {
+            font-size: 0.875rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 1rem;
+        }
+
+        img.icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
         }
 
         .dropdown-container {
-            margin-top: 1rem; /* Ruimte tussen de zoekknop en de dropdown */
-            display: flex;
-            justify-content: center; /* Zorgt ervoor dat de dropdown gecentreerd is */
-            width: 100%; /* Zorg ervoor dat de dropdowncontainer de volle breedte heeft */
-            max-width: 400px; /* Maximaal breedte voor de dropdowncontainer */
+            margin: 20px auto; /* Center the dropdown */
+            width: fit-content; /* Make width fit to content */
         }
 
-        .dropdown-container select {
-            width: 100%; /* Maak het de volle breedte van de container */
-            padding: 0.3em 0.8em;
+        .search-container {
+            margin: 0 auto; /* Center the search container */
+            width: fit-content; /* Make width fit to content */
+            padding-left: 30px; /* Ruimte aan de linkerkant */
+        }
+
+        .search-container input[type=text] {
+            background-color: #444; /* Donkerder grijs */
+            color: white; /* Witte tekst */
+            border-radius: 5px; /* Afgeronde hoeken */
+            padding: 0.5em; /* Padding voor de zoekbalk */
+        }
+
+        .search-button {
+            background-color: #4169e1; /* Royal Blue */
             border: none;
-            border-radius: 5px; /* Afgeronde hoeken voor de dropdown */
-            background-color: #333; /* Zelfde kleur als de header */
-            color: white; /* Witte tekst voor de dropdown */
+            color: white;
+            border-radius: 5px; /* Ronding voor de hoeken */
+            padding: 0.5em 1em; /* Padding voor de knop */
+            cursor: pointer;
+            margin-left: 10px; /* Ruimte tussen zoekbalk en knop */
+        }
+
+        .nav-link {
+            color: #ccc; /* Grijze tekst voor de links */
+            text-decoration: none; /* Geen onderstreping */
+            margin: 0 10px; /* Ruimte tussen de knoppen */
+        }
+
+        .nav-link:hover {
+            text-decoration: underline; /* Onderstreping bij hover */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .table-container {
+            flex: 1;
+            overflow-y: auto;
+            padding-bottom: 10px; /* Voorkom dat de inhoud de footer overlapt */
         }
 
         footer {
@@ -109,15 +136,10 @@
             margin-top: auto;
         }
 
-        .table-container {
-            max-width: 1400px;
-            margin: 20px auto;
-        }
-
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 600px;
+            min-width: 600px; /* Zorg ervoor dat de tabel niet te smal wordt */
         }
 
         th, td {
@@ -127,115 +149,111 @@
         }
 
         th {
-            background-color: #444;
+            background-color: #444; /* Kleur van de bovenste rij */
             color: white;
+            position: sticky; /* Blijft bovenaan tijdens scrollen */
+            top: 0;
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
+        }
+
+        @media (max-width: 768px) {
+            .overflow-x-auto {
+                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <!-- Navigatieknoppen in de header -->
-        <a href="/" class="dashboard-link">Dashboard</a>
-        <a href="/contact" class="contact-link">Contact</a>
-    </header>
-
-    <div class="content-wrapper">
-        <!-- Zoekbalk en zoekknop in één container -->
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
-            <button onclick="searchFunction()">ZOEKEN</button>
+    <div class="container mx-auto p-4">
+        <div class="header flex justify-center items-center mb-4">
+            <a href="/dashboard.html" class="nav-link">Dashboard</a>
+            <a href="/files/contact.html" class="nav-link">Contact</a>
         </div>
-        <!-- Dropdown onder de zoekbalk en knop -->
-        <div class="dropdown-container">
-            <select onchange="if (this.value) window.location.href=this.value;">
-                <option value="">Selecteer een veiligheidsregio</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                <!-- Voeg hier meer opties toe -->
-            </select>
+        
+        <!-- Zoekbalk sectie -->
+        <div class="flex flex-col items-center mt-4">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchTable()">
+                <button class="search-button" onclick="searchFunction()">ZOEKEN</button>
+            </div>
+            <div class="dropdown-container">
+                <select onchange="if (this.value) window.location.href=this.value;">
+                    <option value="">Selecteer een veiligheidsregio</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrk/brandweer">(12) Veiligheidsregio Kennemerland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vraa/brandweer">(13) Veiligheidsregio Amsterdam-Amstelland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgv/brandweer">(14) Veiligheidsregio Gooi en Vechtstreek</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrh/brandweer">(15) Veiligheidsregio Haaglanden</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrhm/brandweer">(16) Veiligheidsregio Hollands Midden</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrz/brandweer">(19) Veiligheidsregio Zeeland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrw/brandweer">(20) Veiligheidsregio Fryslân</option>
+                </select>
+            </div>
         </div>
-    </div>
+        
+        <!-- Tabel sectie -->
+        <div class="table-container overflow-x-auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Voertuignaam</th>
+                        <th>Type</th>
+                        <th>Regio</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="vehicleTableBody">
+                    <!-- Dynamisch gegenereerde rijen komen hier -->
+                </tbody>
+            </table>
+        </div>
 
-    <!-- Tabel met voertuigen -->
-    <div class="table-container">
-        <table id="vehicleTable">
-            <thead>
-                <tr>
-                    <th>Voertuig</th>
-                    <th>Type</th>
-                    <th>Regio</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Voertuig 1</td>
-                    <td>Type A</td>
-                    <td>Regio 1</td>
-                    <td>Actief</td>
-                </tr>
-                <tr>
-                    <td>Voertuig 2</td>
-                    <td>Type B</td>
-                    <td>Regio 2</td>
-                    <td>Inactief</td>
-                </tr>
-                <tr>
-                    <td>Voertuig 3</td>
-                    <td>Type C</td>
-                    <td>Regio 3</td>
-                    <td>Actief</td>
-                </tr>
-                <tr>
-                    <td>Voertuig 4</td>
-                    <td>Type D</td>
-                    <td>Regio 4</td>
-                    <td>Inactief</td>
-                </tr>
-                <tr>
-                    <td>Voertuig 5</td>
-                    <td>Type E</td>
-                    <td>Regio 5</td>
-                    <td>Actief</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Footer sectie -->
+        <footer>
+            <p>&copy; 2024 Hulpdienst Voertuigen. Alle rechten voorbehouden.</p>
+        </footer>
     </div>
-
-    <footer>
-        <!-- Footer inhoud -->
-        <p>&copy; 2024 Hulpdienst Voertuigen. Alle rechten voorbehouden.</p>
-    </footer>
 
     <script>
-        // Voorbeeld zoekfunctie
-        function searchFunction() {
-            var input, filter, table, tr, td, i, j, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("vehicleTable");
-            tr = table.getElementsByTagName("tr");
+        // Zoekfunctie voor de tabel
+        function searchTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('vehicleTableBody');
+            const tr = table.getElementsByTagName('tr');
 
-            for (i = 1; i < tr.length; i++) {
-                tr[i].style.display = "none"; // Verberg alle rijen
-                td = tr[i].getElementsByTagName("td");
-                for (j = 0; j < td.length; j++) {
+            for (let i = 0; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName('td');
+                let txtValue = '';
+
+                for (let j = 0; j < td.length; j++) {
                     if (td[j]) {
-                        txtValue = td[j].textContent || td[j].innerText;
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            tr[i].style.display = ""; // Toont de rij als het overeenkomt
-                            break;
-                        }
+                        txtValue += td[j].textContent || td[j].innerText;
                     }
                 }
+
+                tr[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
             }
+        }
+
+        function searchFunction() {
+            // Hier kan je eventueel een functie aanroepen voor de zoekknop
+            alert('Zoekfunctie nog niet geïmplementeerd.');
         }
     </script>
 </body>
