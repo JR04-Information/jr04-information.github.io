@@ -48,7 +48,10 @@
             padding-top: 6rem; /* Ruimte voor de header */
         }
 
-        .search-container, .dropdown-container {
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin: 1rem 0;
         }
 
@@ -58,21 +61,26 @@
             border: none;
             width: 100%;
             max-width: 300px;
+            background-color: #ccc; /* Grijze achtergrond voor de zoekbalk */
         }
 
         .search-container button {
             padding: 0.5rem 1rem;
-            border-radius: 5px;
+            border-radius: 10px; /* Afgeronde hoeken */
             border: none;
-            background-color: blue;
+            background-color: lightblue; /* Lichtblauwe achtergrond voor de knop */
             color: white;
             font-size: 1rem;
-            margin-top: 0.5rem;
+            margin-left: 0.5rem;
             cursor: pointer;
         }
 
         .search-container button:hover {
-            background-color: darkblue;
+            background-color: deepskyblue; /* Kleurverandering bij hover */
+        }
+
+        .dropdown-container {
+            margin: 1rem 0;
         }
 
         .dropdown-container select {
