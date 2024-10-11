@@ -144,23 +144,21 @@
     </header>
 
     <div class="content-wrapper">
-        <!-- Zoekbalk direct onder de header -->
+        <!-- Zoekbalk, zoekknop en dropdown in één container -->
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
             <button onclick="searchFunction()">ZOEKEN</button>
-        </div>
-
-        <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
-        <div class="dropdown-container">
-            <select onchange="if (this.value) window.location.href=this.value;">
-                <option value="">Selecteer een veiligheidsregio</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                <!-- Voeg hier meer opties toe -->
-            </select>
+            <div class="dropdown-container">
+                <select onchange="if (this.value) window.location.href=this.value;">
+                    <option value="">Selecteer een veiligheidsregio</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                    <!-- Voeg hier meer opties toe -->
+                </select>
+            </div>
         </div>
     </div>
 
