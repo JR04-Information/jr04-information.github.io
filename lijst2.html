@@ -4,170 +4,230 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hulpdienst Voertuigen</title>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <style>
         body {
+            background: url('/files/images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #A9A9A9; /* Grijze kleur */
+            background-color: #333;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
-            justify-content: flex-end;
-            padding: 10px 20px;
-            position: fixed; /* Blijft bovenaan de pagina */
-            width: 100%; /* Volledige breedte */
-            top: 0; /* Zorgt dat het bovenaan blijft */
-            z-index: 1000; /* Zorgt ervoor dat de header boven andere elementen ligt */
+            justify-content: flex-end; /* Align links naar rechts */
+            align-items: center;
+            z-index: 1000;
         }
 
-        header a {
+        header .dashboard-link {
             text-decoration: none;
-            color: royalblue; /* Contact en Dashboard in blauw */
-            padding: 10px 15px;
-            margin-left: 10px;
+            color: #ccc; /* Grijze kleur voor de dashboard knop */
+            margin-right: 1rem; /* Ruimte tussen de knoppen */
         }
 
-        header a:hover {
-            color: darkblue; /* Donkerblauwe hoverkleur */
+        header .contact-link {
+            text-decoration: none; /* Geen onderstreepte tekst */
+            color: #ccc; /* Grijze kleur voor de contact knop */
+            margin-right: 1rem; /* Ruimte tussen de knoppen */
         }
 
-        .container {
+        header .contact-link:hover {
+            color: #1E90FF; /* Donkerdere blauw bij hover */
+        }
+
+        .content-wrapper {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 80px; /* Ruimte voor de vaste header */
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding-top: 6rem; /* Ruimte voor de header */
         }
 
-        #searchInput {
-            padding: 10px;
-            border: 1px solid #A9A9A9; /* Grijze rand */
-            border-radius: 5px; /* Afgeronde hoeken */
-            width: 250px; /* Breedte van de zoekbalk */
-            background-color: #A9A9A9; /* Zelfde kleur als header */
-            color: white; /* Witte tekst */
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem 0;
         }
 
-        #searchButton {
-            padding: 10px 15px;
+        .search-container input {
+            padding: 0.5rem;
+            border-radius: 5px;
             border: none;
-            border-radius: 5px; /* Afgeronde hoeken */
-            background-color: royalblue; /* Zoekknop kleur */
-            color: white; /* Witte tekst */
-            margin-left: 5px; /* Ruimte tussen zoekbalk en knop */
+            width: 100%;
+            max-width: 300px;
+            background-color: #888; /* Donkerdere grijze achtergrond voor de zoekbalk */
         }
 
-        #searchButton:hover {
-            background-color: darkblue; /* Donkerblauwe hoverkleur */
+        .search-container button {
+            padding: 0.5rem 1rem;
+            border-radius: 10px; /* Afgeronde hoeken */
+            border: none;
+            background-color: #4169E1; /* Royal Blue kleur voor de knop */
+            color: white;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
         }
 
-        #regionDropdown {
-            margin-top: 10px; /* Ruimte boven de dropdown */
+        .search-container button:hover {
+            background-color: #1E90FF; /* Donkerdere blauw bij hover */
         }
 
-        table {
-            width: 100%; /* Breedte van de tabel */
-            margin-top: 20px;
-            border-collapse: collapse;
+        .dropdown-container {
+            margin: 1rem 0;
         }
 
-        th, td {
-            padding: 10px;
-            border: 1px solid #A9A9A9; /* Grijze rand voor de tabel */
-            text-align: left;
-        }
-
-        th {
-            background-color: #D3D3D3; /* Lichtgrijze achtergrond voor de header van de tabel */
+        .dropdown-container select {
+            width: 100%;
+            max-width: 300px;
+            margin: 0.5rem 0;
+            font-size: 1em;
+            padding: 0.3em 0.8em;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: #fff;
         }
 
         footer {
+            background-color: #333;
+            color: #ccc;
             text-align: center;
             padding: 10px;
-            background-color: #A9A9A9; /* Grijze achtergrond voor de footer */
+            margin-top: auto;
+        }
+
+        .table-container {
+            max-width: 1400px;
+            margin: 20px auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th {
+            background-color: #444;
+            color: white;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#contact">Contact</a>
+        <!-- Navigatieknoppen in de header -->
+        <a href="/" class="dashboard-link">Dashboard</a>
+        <a href="/contact" class="contact-link">Contact</a>
     </header>
 
-    <div class="container">
-        <h1>Zoek Hulpdienst Voertuigen</h1>
-        <div>
-            <input type="text" id="searchInput" placeholder="Zoek...">
-            <button id="searchButton" onclick="searchFunction()">ZOEKEN</button>
-        </div>
-        <div id="regionDropdown">
-            <select>
-                <option value="" disabled selected>Kies een regio</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrw/brandweer">Veiligheidsregio West-Brabant</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrb/brandweer">Veiligheidsregio Brabant-Noord</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbr/brandweer">Veiligheidsregio Brabant-Rivierenland</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vra/brandweer">Veiligheidsregio Limburg-Noord</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrg/brandweer">Veiligheidsregio Limburg-Zuid</option>
-                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrp/brandweer">Veiligheidsregio Zeeland-West-Brabant</option>
-            </select>
+    <div class="content-wrapper">
+        <!-- Zoekbalk direct onder de header -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
+            <button onclick="searchFunction()">ZOEKEN</button>
         </div>
 
-        <table>
+        <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
+        <div class="dropdown-container">
+            <select onchange="if (this.value) window.location.href=this.value;">
+                <option value="">Selecteer een veiligheidsregio</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                <!-- Voeg hier meer opties toe -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Tabel met voertuigen -->
+    <div class="table-container">
+        <table id="vehicleTable">
             <thead>
                 <tr>
                     <th>Voertuig</th>
                     <th>Type</th>
-                    <th>Kenteken</th>
                     <th>Regio</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Voertuig 1</td>
-                    <td>Brandweerauto</td>
-                    <td>AB-123-CD</td>
+                    <td>Brandweerwagen</td>
                     <td>Groningen</td>
+                    <td>Actief</td>
                 </tr>
                 <tr>
                     <td>Voertuig 2</td>
                     <td>Ambulance</td>
-                    <td>EF-456-GH</td>
                     <td>Friesland</td>
+                    <td>Inactief</td>
                 </tr>
                 <tr>
                     <td>Voertuig 3</td>
                     <td>Politieauto</td>
-                    <td>IJ-789-KL</td>
                     <td>Drenthe</td>
+                    <td>Actief</td>
+                </tr>
+                <tr>
+                    <td>Voertuig 4</td>
+                    <td>Brandweerwagen</td>
+                    <td>Utrecht</td>
+                    <td>In onderhoud</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
     <footer>
-        <p>&copy; 2024 Hulpdienst Voertuigen. Alle rechten voorbehouden.</p>
+        &copy; 2024 Hulpdiensten Overzicht
     </footer>
 
     <script>
+        // Zoekfunctie voor de tabel
         function searchFunction() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const table = document.querySelector('table tbody');
-            const rows = table.querySelectorAll('tr');
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("vehicleTable");
+            tr = table.getElementsByTagName("tr");
 
-            rows.forEach(row => {
-                const cells = row.querySelectorAll('td');
-                let found = false;
-
-                cells.forEach(cell => {
-                    if (cell.textContent.toLowerCase().includes(input)) {
-                        found = true;
+            for (i = 1; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                            break;
+                        }
                     }
-                });
-
-                row.style.display = found ? '' : 'none';
-            });
+                }
+            }
         }
     </script>
 </body>
