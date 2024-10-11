@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hulpdienst Voertuigen</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.tailwindcss.com">
     <style>
         body {
             background: url('/files/images/background.png') no-repeat center center fixed;
@@ -75,7 +75,34 @@
             margin-right: 4px;
         }
 
-        /* Verwijderde aangepaste stijlen voor dropdown, knoppen en zoekbalk */
+        /* Stijl voor oude dropdown en zoekbalk */
+        .dropdown-container select,
+        .search-container input[type=text],
+        .nav-link {
+            background-color: #222;
+            border: 1px solid #555;
+            padding: 5px;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .dropdown-container select:hover,
+        .search-container input[type=text]:hover,
+        .nav-link:hover {
+            background-color: #333;
+        }
+
+        /* Stijl voor knoppen */
+        .nav-link {
+            text-decoration: none;
+            margin-right: 8px;
+        }
+
+        .search-container input[type=text] {
+            padding: 5px;
+            font-size: 14px;
+        }
 
         .container {
             display: flex;
@@ -120,7 +147,7 @@
         }
 
         tbody tr:nth-child(odd) {
-            background-color: rgba(255, 255, 255, 0.1); /* Wisselende rijkleuren voor betere leesbaarheid */
+            background-color: rgba(255, 255, 255, 0.1); /* Alternating row colors for better readability */
         }
 
         @media (max-width: 768px) {
@@ -137,104 +164,111 @@
             <div class="flex gap-2">
                 <!-- Dropdown voor veiligheidsregio's -->
                 <div class="dropdown-container">
-                    <select class="bg-gray-700 text-white rounded-full py-2 px-4" onchange="if (this.value) window.location.href=this.value;">
+                    <select onchange="if (this.value) window.location.href=this.value;">
                         <option value="">Selecteer een veiligheidsregio</option>
-                        <!-- ... (andere opties) ... -->
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrk/brandweer">(12) Veiligheidsregio Kennemerland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vraa/brandweer">(13) Veiligheidsregio Amsterdam-Amstelland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgv/brandweer">(14) Veiligheidsregio Gooi en Vechtstreek</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrh/brandweer">(15) Veiligheidsregio Haaglanden</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrhm/brandweer">(16) Veiligheidsregio Hollands Midden</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrz/brandweer">(19) Veiligheidsregio Zeeland</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrmwb/brandweer">(20) Veiligheidsregio Midden en west Brabant</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbn/brandweer">(21) Veiligheidsregio Brabant-Noord</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrbzo/brandweer">(22) Veiligheidsregio Brabant Zuid Oost</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrln/brandweer">(23) Veiligheidsregio Limburg-Noord</option>
+                        <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzl/brandweer">(24) Veiligheidsregio Zuid-Limburg</option>
                     </select>
                 </div>
 
                 <!-- Zoekbalk -->
                 <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchTable()" class="bg-gray-700 text-white rounded-full py-2 px-4">
+                    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Zoek op voertuig of type...">
                 </div>
 
-                <!-- Andere knoppen -->
-                <a href="/index.html" class="bg-blue-500 text-white rounded-full px-4 py-2">Startpagina</a>
-                <a href="/files/contact.html" class="bg-blue-500 text-white rounded-full px-4 py-2">Contact</a>
+                <!-- Navigatieknoppen -->
+                <a href="/" class="nav-link">Dashboard</a>
+                <a href="/contact" class="nav-link">Contact</a>
             </div>
         </div>
-        <div class="overflow-x-auto">
-            <table id="dataTable">
+
+        <!-- Tabel met voertuigen -->
+        <div class="table-container">
+            <table id="vehicleTable">
                 <thead>
-                    <tr class="bg-gray-800">
-                        <th class="px-4 py-2">
-                            <span class="flex items-center justify-center">
-                                <img src="/files/images/adres.png" alt="Adres" class="icon"> Adres
-                            </span>
-                        </th>
-                        <th class="px-4 py-2">
-                            <span class="flex items-center justify-center">
-                                <img src="/files/images/roepnummer.png" alt="Roepnummer" class="icon"> Roepnummer
-                            </span>
-                        </th>
-                        <th class="px-4 py-2">
-                            <span class="flex items-center justify-center">
-                                <img src="/files/images/type.png" alt="Type voertuig" class="icon"> Type voertuig
-                            </span>
-                        </th>
-                        <th class="px-4 py-2">
-                            <span class="flex items-center justify-center">
-                                <img src="/files/images/kenteken.png" alt="Kenteken" class="icon"> Kenteken
-                            </span>
-                        </th>
-                        <th class="px-4 py-2">
-                            <span class="flex items-center justify-center">
-                                <img src="/files/images/bijzonderheden.png" alt="Bijzonderheden" class="icon"> Bijzonderheden
-                            </span>
-                        </th>
+                    <tr>
+                        <th>Voertuig</th>
+                        <th>Type</th>
+                        <th>Regio</th>
+                        <th>Status</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>03-80 Norg, Eenerstraat 69</td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
+                        <td>Voertuig 1</td>
+                        <td>Brandweerwagen</td>
+                        <td>Groningen</td>
+                        <td>Actief</td>
                     </tr>
-                    <!-- Voeg hier meer rijen toe -->
+                    <tr>
+                        <td>Voertuig 2</td>
+                        <td>Ambulance</td>
+                        <td>Friesland</td>
+                        <td>Inactief</td>
+                    </tr>
+                    <tr>
+                        <td>Voertuig 3</td>
+                        <td>Politieauto</td>
+                        <td>Drenthe</td>
+                        <td>Actief</td>
+                    </tr>
+                    <tr>
+                        <td>Voertuig 4</td>
+                        <td>Brandweerwagen</td>
+                        <td>Utrecht</td>
+                        <td>In onderhoud</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <!-- Footer sectie -->
+
     <footer>
-        &copy; 2024 - <span id="currentYear"></span> HulpdienstVoertuigenNL-BE. Alle rechten voorbehouden.
+        &copy; 2024 Hulpdiensten Overzicht
     </footer>
 
-    <!-- JavaScript voor het instellen van het huidige jaar in de footer -->
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            var currentYear = new Date().getFullYear();
-            var startYear = 2024;
-            var footerText = startYear + (currentYear > startYear ? " - " + currentYear : "");
-            document.getElementById('currentYear').textContent = footerText;
-        });
-    </script>
+        // Zoekfunctie voor de tabel
+        function searchFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("vehicleTable");
+            tr = table.getElementsByTagName("tr");
 
-    <!-- JavaScript voor zoekfunctionaliteit -->
-    <script>
-        function searchTable() {
-            var input = document.getElementById('searchInput').value.toUpperCase();
-            var table = document.getElementById('dataTable');
-            var rows = table.getElementsByTagName('tr');
-            
-            for (var i = 1; i < rows.length; i++) {
-                var cells = rows[i].getElementsByTagName('td');
-                var rowContainsInput = false;
-
-                for (var j = 0; j < cells.length; j++) {
-                    var cellValue = cells[j].textContent || cells[j].innerText;
-                    if (cellValue.toUpperCase().indexOf(input) > -1) {
-                        rowContainsInput = true;
-                        break;
+            for (i = 1; i < tr.length; i++) {
+                tr[i].style.display = "none";
+                td = tr[i].getElementsByTagName("td");
+                for (var j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                            break;
+                        }
                     }
-                }
-
-                if (rowContainsInput) {
-                    rows[i].style.display = '';
-                } else {
-                    rows[i].style.display = 'none';
                 }
             }
         }
