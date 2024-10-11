@@ -13,27 +13,52 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center; /* Centreert de inhoud horizontaal */
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        header .nav-link {
+            text-decoration: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            background-color: #444;
+        }
+
+        header .nav-link:hover {
+            background-color: #555;
         }
 
         .content-wrapper {
-            text-align: center; /* Zorgt ervoor dat de inhoud gecentreerd is */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding-top: 5rem; /* Zorgt voor ruimte onder de header */
         }
 
         .flex {
             display: flex;
-            flex-direction: column; /* Zorgt ervoor dat items onder elkaar staan */
+            flex-direction: column;
             align-items: center;
-            gap: 1rem; /* Voegt ruimte toe tussen de items */
+            gap: 1rem;
         }
 
-        .dropdown-container select, .search-container input, .nav-link {
+        .dropdown-container select, .search-container input {
             width: 100%;
-            max-width: 300px; /* Beperkt de breedte van de dropdown, zoekbalk en knoppen */
+            max-width: 300px;
             margin: 0.5rem 0;
             font-size: 1em;
             padding: 0.3em 0.8em;
@@ -41,19 +66,6 @@
             border-radius: 10px;
             background-color: #333;
             color: #fff;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            background-color: #333;
-            padding: 0.3em 0.8em;
-            border-radius: 10px;
-            color: white;
-            display: inline-block;
-        }
-
-        .nav-link:hover {
-            background-color: #4a5568;
         }
 
         footer {
@@ -92,6 +104,12 @@
     </style>
 </head>
 <body>
+    <header>
+        <!-- Navigatieknoppen in de header -->
+        <a href="/" class="nav-link">Dashboard</a>
+        <a href="/contact" class="nav-link">Contact</a>
+    </header>
+
     <div class="content-wrapper">
         <div class="flex">
             <!-- Dropdown voor veiligheidsregio's -->
@@ -111,10 +129,6 @@
             <div class="search-container">
                 <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Zoek op voertuig of type...">
             </div>
-
-            <!-- Navigatieknoppen -->
-            <a href="/" class="nav-link">Dashboard</a>
-            <a href="/contact" class="nav-link">Contact</a>
         </div>
     </div>
 
