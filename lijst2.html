@@ -54,30 +54,28 @@
 
         .search-container {
             display: flex;
-            flex-direction: column; /* Stapel elementen verticaal */
-            align-items: center; /* Centraal uitlijnen */
+            align-items: center; /* Horizontaal centreren */
             justify-content: center; /* Centraal uitlijnen */
             margin: 1rem 0;
         }
 
         .search-container input {
             padding: 0.5rem;
-            border-radius: 5px;
+            border-radius: 5px 0 0 5px; /* Alleen de linker hoeken afgerond */
             border: none;
             width: 100%;
-            max-width: 300px;
+            max-width: 250px; /* Maak het iets smaller */
             background-color: #333; /* Zelfde kleur als de header */
             color: white; /* Witte tekst voor de zoekbalk */
         }
 
         .search-container button {
             padding: 0.5rem 1rem;
-            border-radius: 10px; /* Afgeronde hoeken */
+            border-radius: 0 5px 5px 0; /* Alleen de rechter hoeken afgerond */
             border: none;
             background-color: #4169E1; /* Royal Blue kleur voor de knop */
             color: white;
             font-size: 1rem;
-            margin-top: 0.5rem; /* Ruimte tussen zoekbalk en knop */
             cursor: pointer;
         }
 
@@ -86,17 +84,15 @@
         }
 
         .dropdown-container {
-            margin: 1rem 0;
+            margin-left: 1rem; /* Ruimte tussen de knop en de dropdown */
         }
 
         .dropdown-container select {
             width: 100%;
-            max-width: 300px;
-            margin: 0.5rem 0;
-            font-size: 1em;
+            max-width: 250px; /* Maak het iets smaller */
             padding: 0.3em 0.8em;
             border: none;
-            border-radius: 10px;
+            border-radius: 5px; /* Afgeronde hoeken voor de dropdown */
             background-color: #333; /* Zelfde kleur als de header */
             color: white; /* Witte tekst voor de dropdown */
         }
