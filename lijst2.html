@@ -22,34 +22,25 @@
             top: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Align links naar rechts */
             align-items: center;
             z-index: 1000;
         }
 
-        header .nav-link {
+        header .dashboard-link {
             text-decoration: none;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background-color: #4169E1; /* Royal Blue kleur */
-        }
-
-        header .nav-link:hover {
-            background-color: #1E90FF; /* Donkerdere blauw bij hover */
+            color: #ccc; /* Grijze kleur voor de dashboard knop */
+            margin-right: 1rem; /* Ruimte tussen de knoppen */
         }
 
         header .contact-link {
             text-decoration: none; /* Geen onderstreepte tekst */
-            background-color: #4169E1; /* Royal Blue kleur voor de knop */
-            margin-right: 1rem; /* Knop iets naar binnen verschoven */
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            color: white;
+            color: #4169E1; /* Royal Blue kleur voor de contact knop */
+            margin-right: 1rem; /* Ruimte tussen de knoppen */
         }
 
         header .contact-link:hover {
-            background-color: #1E90FF; /* Donkerdere blauw bij hover */
+            color: #1E90FF; /* Donkerdere blauw bij hover */
         }
 
         .content-wrapper {
@@ -146,7 +137,7 @@
 <body>
     <header>
         <!-- Navigatieknoppen in de header -->
-        <a href="/" class="nav-link">Dashboard</a>
+        <a href="/" class="dashboard-link">Dashboard</a>
         <a href="/contact" class="contact-link">Contact</a>
     </header>
 
