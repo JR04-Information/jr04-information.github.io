@@ -16,6 +16,10 @@
             display: flex;
             justify-content: flex-end;
             padding: 10px 20px;
+            position: fixed; /* Blijft bovenaan de pagina */
+            width: 100%; /* Volledige breedte */
+            top: 0; /* Zorgt dat het bovenaan blijft */
+            z-index: 1000; /* Zorgt ervoor dat de header boven andere elementen ligt */
         }
 
         header a {
@@ -33,7 +37,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 20px;
+            margin-top: 80px; /* Ruimte voor de vaste header */
         }
 
         #searchInput {
