@@ -18,112 +18,63 @@
             min-height: 100vh;
         }
 
-        .flex {
+        .header {
+            background-color: #333; /* Grijze kleur voor de header */
+            padding: 10px;
             display: flex;
-            align-items: center;
-        }
-
-        .justify-between {
-            justify-content: space-between;
-        }
-
-        .gap-2 {
-            gap: 0.5rem;
-        }
-
-        .mb-4 {
-            margin-bottom: 1rem;
-        }
-
-        .text-gray-400 {
-            color: #ccc;
-        }
-
-        .bg-gray-600 {
-            background-color: #333;
-        }
-
-        .rounded-lg {
-            border-radius: 0.5rem;
-        }
-
-        .px-2 {
-            padding-left: 0.5rem;
-            padding-right: 0.5rem;
-        }
-
-        .py-1 {
-            padding-top: 0.25rem;
-            padding-bottom: 0.25rem;
-        }
-
-        .text-sm {
-            font-size: 0.875rem;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .mt-4 {
-            margin-top: 1rem;
-        }
-
-        img.icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 4px;
-        }
-
-        .dropdown-container {
-            margin-right: 0.5rem;
-        }
-
-        .dropdown-container select {
-            font-size: 1em;
-            padding: 0.3em 0.8em;
-            border: none;
-            border-radius: 10px;
-            background-color: #333;
-            color: #fff;
+            justify-content: flex-end; /* Plaatst knoppen aan de rechterkant */
+            gap: 20px;
         }
 
         .nav-link {
-            background-color: royalblue;
-            color: #fff;
-            padding: 0.3em 0.8em;
-            border-radius: 10px;
+            color: #ccc;
             text-decoration: none;
-            margin-right: 0.5rem;
+            padding: 0.5em;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
 
         .nav-link:hover {
-            background-color: #4a5568;
+            background-color: #555;
         }
 
         .search-container {
-            margin-right: 0.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
         }
 
-        .search-container input[type=text] {
-            padding: 0.3em 0.8em;
-            border-radius: 10px;
+        .search-container input[type="text"] {
+            background-color: #444; /* Donkergrijze kleur voor de zoekbalk */
+            color: white;
+            padding: 0.5em;
+            border-radius: 5px;
             border: none;
-            background-color: #555; /* Donkergrijze kleur */
-            color: white; /* Witte tekst */
+            width: 300px;
         }
 
         .search-button {
-            background-color: #007BFF; /* Lichtblauwe kleur */
+            background-color: #1E90FF; /* Royal Blue */
             color: white;
+            padding: 0.5em 1em;
             border: none;
-            border-radius: 10px;
-            padding: 0.3em 0.8em;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        .search-button:hover {
-            background-color: #0056b3; /* Donkerder blauw voor hover */
+        .dropdown-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        select {
+            padding: 0.5em;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            border: none;
         }
 
         .container {
@@ -176,95 +127,108 @@
             .overflow-x-auto {
                 max-height: none; /* Geen hoogtebeperking op kleinere schermen */
             }
+            .search-container {
+                flex-direction: column; /* Stapelen op kleinere schermen */
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="flex justify-between bg-gray-800 p-4">
-        <div class="flex gap-4">
-            <a href="/index.html" class="nav-link">Dashboard</a>
-            <a href="/files/contact.html" class="nav-link">Contact</a>
-        </div>
-        <div class="text-gray-400">Laatste update: 29-09-2024</div>
-    </header>
+    <div class="header">
+        <a href="/index.html" class="nav-link">Dashboard</a>
+        <a href="/files/contact.html" class="nav-link">Contact</a>
+    </div>
 
     <div class="container mx-auto p-4">
-        <div class="flex justify-center mb-4 gap-2">
-            <div class="search-container">
-                <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchTable()">
-                <button class="search-button" onclick="searchFunction()">Zoeken</button>
-            </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Zoek op adres..." oninput="searchFunction()">
+            <button class="search-button" onclick="searchFunction()">Zoeken</button>
+        </div>
 
-            <div class="dropdown-container">
-                <select onchange="if (this.value) window.location.href=this.value;">
-                    <option value="">Selecteer een veiligheidsregio</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrk/brandweer">(12) Veiligheidsregio Kennemerland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vraa/brandweer">(13) Veiligheidsregio Amsterdam-Amstelland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgv/brandweer">(14) Veiligheidsregio Gooi en Vechtstreek</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrh/brandweer">(15) Veiligheidsregio Haaglanden</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrhm/brandweer">(16) Veiligheidsregio Hollands Midden</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrze/brandweer">(19) Veiligheidsregio Zeeland</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrfr/brandweer">(20) Veiligheidsregio Fryslân</option>
-                    <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrn/brandweer">(21) Veiligheidsregio Noorderemden</option>
-                </select>
-            </div>
+        <div class="dropdown-container">
+            <select onchange="if (this.value) window.location.href=this.value;">
+                <option value="">Selecteer een veiligheidsregio</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/hvdg/brandweer">(01) Veiligheidsregio Groningen</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrf/brandweer">(02) Veiligheidsregio Friesland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrd/brandweer">(03) Veiligheidsregio Drenthe</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrij/brandweer">(04) Veiligheidsregio IJsselland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrt/brandweer">(05) Veiligheidsregio Twente</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vnog/brandweer">(06) Veiligheidsregio Noord en Oost Gelderland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vggm/brandweer">(07) Veiligheidsregio Gelderland Midden</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgz/brandweer">(08) Veiligheidsregio Gelderland Zuid</option>  
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vru/brandweer">(09) Veiligheidsregio Utrecht</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrnhn/brandweer">(10) Veiligheidsregio Noord-Holland Noord</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzw/brandweer">(11) Veiligheidsregio Zaanstreek-Waterland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrk/brandweer">(12) Veiligheidsregio Kennemerland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vraa/brandweer">(13) Veiligheidsregio Amsterdam-Amstelland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrgv/brandweer">(14) Veiligheidsregio Gooi en Vechtstreek</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrh/brandweer">(15) Veiligheidsregio Haaglanden</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrhm/brandweer">(16) Veiligheidsregio Hollands Midden</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrr/brandweer">(17) Veiligheidsregio Rotterdam-Rijnmond</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrzhz/brandweer">(18) Veiligheidsregio Zuid-Holland Zuid</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrz/brandweer">(19) Veiligheidsregio Zeeland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/vrfl/brandweer">(20) Veiligheidsregio Flevoland</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/ifv/brandweer">(21) Instituut Fysieke Veiligheid</option>
+                <option value="/files/voertuigoverzichten/nl_regioselectie/brandweer/def/brandweer">(22) Defensie</option>
+            </select>
         </div>
 
         <div class="table-container overflow-x-auto">
-            <table class="min-w-full bg-gray-800">
+            <table id="dataTable">
                 <thead>
-                    <tr>
-                        <th class="px-4 py-2">ID</th>
+                    <tr class="bg-gray-800">
                         <th class="px-4 py-2">Adres</th>
-                        <th class="px-4 py-2">Stad</th>
+                        <th class="px-4 py-2">Roepnummer</th>
                         <th class="px-4 py-2">Status</th>
                     </tr>
                 </thead>
-                <tbody id="dataBody">
-                    <!-- Dynamisch toegevoegde rijen -->
+                <tbody>
+                    <tr>
+                        <td>Hoofdstraat 1, Groningen</td>
+                        <td>1234</td>
+                        <td>Beschikbaar</td>
+                    </tr>
+                    <tr>
+                        <td>Hoofdstraat 2, Friesland</td>
+                        <td>5678</td>
+                        <td>In gebruik</td>
+                    </tr>
+                    <tr>
+                        <td>Hoofdstraat 3, Drenthe</td>
+                        <td>91011</td>
+                        <td>Onderhoud</td>
+                    </tr>
+                    <!-- Voeg hier meer rijen toe indien nodig -->
                 </tbody>
             </table>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2024 NLVOL - Alle rechten voorbehouden.</p>
+        &copy; 2024 Hulpdiensten. Alle rechten voorbehouden.
     </footer>
 
     <script>
         function searchFunction() {
             const input = document.getElementById('searchInput');
             const filter = input.value.toLowerCase();
-            const table = document.getElementById('dataBody');
+            const table = document.getElementById('dataTable');
             const tr = table.getElementsByTagName('tr');
 
-            for (let i = 0; i < tr.length; i++) {
+            for (let i = 1; i < tr.length; i++) {
                 const td = tr[i].getElementsByTagName('td');
-                let found = false;
-
+                let rowContainsSearchTerm = false;
                 for (let j = 0; j < td.length; j++) {
                     if (td[j]) {
                         const txtValue = td[j].textContent || td[j].innerText;
                         if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                            found = true;
+                            rowContainsSearchTerm = true;
                             break;
                         }
                     }
                 }
-                tr[i].style.display = found ? "" : "none";
+                tr[i].style.display = rowContainsSearchTerm ? "" : "none";
             }
         }
     </script>
