@@ -47,7 +47,7 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding-top: 6rem;
+            padding-top: 6rem; /* Ruimte voor de fixed header */
         }
 
         .search-dropdown-container {
@@ -61,7 +61,9 @@
         }
 
         .search-container {
-            margin-right: 0.5rem;
+            display: flex; /* Zorgt ervoor dat de zoekbalk en knop naast elkaar staan */
+            justify-content: center; /* Centraal uitgelijnd */
+            margin-bottom: 0.5rem; /* Ruimte tussen zoekbalk en dropdown */
         }
 
         .search-container input[type=text] {
@@ -134,35 +136,16 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Standaard voor PC (midden uitgelijnd) */
-        .search-dropdown-container {
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Media queries voor mobiele gebruikers (verder naar rechts) */
+        /* Media queries voor mobiele gebruikers */
         @media (max-width: 768px) {
             .search-dropdown-container {
-                align-items: center; /* Zoekbalk en dropdown in het midden */
-                padding: 0; /* Geen extra padding */
-                width: 100%; /* Volledige breedte gebruiken */
+                align-items: center; /* Zorgt ervoor dat alles in het midden staat */
+            }
+            .search-container {
                 justify-content: center; /* Centraal uitgelijnd */
             }
-
-            .search-container {
-                margin-right: 0; /* Geen marge aan de rechterkant */
-            }
-
-            .dropdown-container {
-                margin-right: 0; /* Geen marge aan de rechterkant */
-            }
         }
 
-        @media (max-width: 768px) {
-            .overflow-x-auto {
-                max-height: none; /* Geen hoogtebeperking op kleinere schermen */
-            }
-        }
     </style>
 </head>
 <body>
