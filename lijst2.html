@@ -48,19 +48,19 @@
         }
 
         .search-dropdown-container {
-            display: flex; /* Plaats de zoekbalk en dropdown naast elkaar */
-            justify-content: center; /* Centreer de inhoud */
-            align-items: center; /* Centreer verticaal */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            margin: 1rem 0; /* Ruimte boven en onder */
-            flex-wrap: wrap; /* Zorg dat het kan wrappen op kleinere schermen */
-            padding: 0 1rem; /* Padding voor responsiviteit */
+            margin: 1rem 0;
+            white-space: nowrap; /* Zorg dat de inhoud niet op meerdere regels komt */
+            overflow-x: scroll; /* Voeg horizontaal scrollen toe indien nodig */
         }
 
         .search-container {
-            display: flex;
+            display: inline-flex;
             align-items: center; /* Verticaal centreren */
-            margin-right: 1rem; /* Ruimte tussen de zoekbalk en de dropdown */
+            margin-right: 1rem;
             width: auto; /* Laat de zoekbalk flexibel zijn */
         }
 
@@ -70,8 +70,7 @@
             border: none;
             background-color: #888; /* Donkerdere grijze achtergrond voor de zoekbalk */
             color: white; /* Tekstkleur van de zoekbalk */
-            width: 100%; /* Laat de zoekbalk de ruimte innemen */
-            max-width: 200px; /* Max breedte voor de zoekbalk */
+            max-width: 400px; /* Grotere max-breedte voor de zoekbalk */
         }
 
         .search-container button {
@@ -91,8 +90,8 @@
 
         .dropdown-container {
             margin-left: 1rem; /* Ruimte tussen dropdown en zoekbalk */
-            flex: 1; /* Laat de dropdown de resterende ruimte innemen */
-            min-width: 150px; /* Minimale breedte voor de dropdown */
+            flex: none; /* Laat de dropdown naast de zoekbalk staan zonder te wrappen */
+            min-width: 200px; /* Grotere minimale breedte voor de dropdown */
         }
 
         .dropdown-container select {
