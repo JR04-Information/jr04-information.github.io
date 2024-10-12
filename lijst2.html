@@ -25,7 +25,7 @@
             top: 0;
             width: 100%;
             display: flex;
-            justify-content: space-between; /* Knoppen goed verspreiden */
+            justify-content: flex-end;
             align-items: center;
             z-index: 1000;
         }
@@ -34,7 +34,7 @@
         header .contact-link {
             text-decoration: none;
             color: #ccc;
-            margin: 0 1rem; /* Marges voor de knoppen */
+            margin-right: 1rem;
         }
 
         header .contact-link:hover {
@@ -47,22 +47,22 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding-top: 6rem; /* Ruimte voor de fixed header */
+            padding-top: 6rem;
         }
 
         .search-dropdown-container {
             display: flex;
-            flex-direction: column; /* Zorgt ervoor dat de zoekbalk en dropdown onder elkaar staan */
-            justify-content: center; /* Centraal uitgelijnd */
-            align-items: center; /* Centraal uitgelijnd */
+            flex-direction: column; /* Zet de elementen onder elkaar */
+            align-items: center; /* Centreer elementen */
             width: 100%;
             margin: 1rem 0;
             padding: 0 1rem;
         }
 
         .search-container {
-            display: flex; /* Zorgt ervoor dat de zoekbalk en knop naast elkaar staan */
-            justify-content: center; /* Centraal uitgelijnd */
+            display: flex;
+            justify-content: center; /* Centreer zoekbalk en knop */
+            align-items: center;
             margin-bottom: 0.5rem; /* Ruimte tussen zoekbalk en dropdown */
         }
 
@@ -72,6 +72,8 @@
             border: none;
             background-color: #333;
             color: white;
+            min-width: 150px; /* Minimale breedte voor input */
+            max-width: 300px; /* Max breedte voor input */
         }
 
         .search-container button {
@@ -90,7 +92,7 @@
         }
 
         .dropdown-container {
-            margin-right: 0.5rem;
+            margin-top: 0.5rem; /* Ruimte boven dropdown */
         }
 
         .dropdown-container select {
@@ -136,31 +138,16 @@
             background-color: rgba(255, 255, 255, 0.1);
         }
 
-        /* Media queries voor mobiele gebruikers */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column; /* Knoppen onder elkaar op mobiel */
-                align-items: center; /* Centraal uitgelijnd */
-            }
-
-            header .dashboard-link,
-            header .contact-link {
-                margin: 0.5rem 0; /* Ruimte tussen knoppen */
-            }
-
             .search-dropdown-container {
-                align-items: center; /* Zoekbalk en dropdown in het midden */
-                padding: 0; /* Geen extra padding */
-                width: 100%; /* Volledige breedte gebruiken */
+                justify-content: flex-end; /* Plaats de zoekbalk verder naar rechts op mobiel */
             }
 
             .search-container {
-                width: 100%; /* Zorg ervoor dat de zoekcontainer de volledige breedte heeft */
-                flex-wrap: wrap; /* Zorgt ervoor dat elementen op mobiele apparaten goed worden weergegeven */
-                justify-content: center; /* Centraal uitgelijnd */
+                margin-right: auto; /* Zorgt dat het naar rechts geduwd wordt */
+                margin-left: auto; /* Zorgt dat het naar rechts geduwd wordt */
             }
         }
-
     </style>
 </head>
 <body>
