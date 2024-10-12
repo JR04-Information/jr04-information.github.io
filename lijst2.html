@@ -40,7 +40,7 @@
         header .contact-link:hover {
             color: #1E90FF;
         }
-      
+
         .content-wrapper {
             display: flex;
             flex-direction: column;
@@ -50,48 +50,46 @@
             padding-top: 6rem;
         }
 
-        /* Search box */
-.title-search{
-    display: flex;
-    width: 40% ;
-    height: 4rem;
-    padding: 1rem;
-}
+        .search-dropdown-container {
+            display: flex;
+            flex-direction: column; /* Zet de elementen onder elkaar */
+            align-items: center; /* Centreer elementen */
+            justify-content: center; /* Centreer elementen verticaal */
+            width: 100%;
+            margin: 1rem 0; /* Ruimte boven en onder */
+            padding: 0 1rem; /* Padding voor responsiviteit */
+        }
 
-.title-search input{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+        .search-container {
+            display: flex;
+            justify-content: center; /* Centreer de zoekbalk en knop */
+            align-items: center;
+            margin-bottom: 1rem; /* Ruimte onder de zoekbalk */
+        }
 
-    border: none;
+        .search-container input[type=text] {
+            padding: 0.3em 0.8em;
+            border-radius: 10px;
+            border: none;
+            background-color: #333;
+            color: white;
+            width: 200px; /* Brede zoekbalk */
+        }
 
-    background-color: rgba(50, 50, 50, 0.65);
-    color: #B3B3B3;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: left;
+        .search-container button {
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            border: none;
+            background-color: #4169E1;
+            color: white;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+            cursor: pointer;
+        }
 
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    width: 100%;
-
-    margin-top: 1rem;
-    border-radius: 2rem;
-
-    box-shadow: 0px 10px 22px 0px rgba(0, 0, 0, 0.4);
-}
-
-.title-search button{
-    margin-top: 1rem;
-    margin-left: 1rem;
-
-    width: 50%;
-    box-shadow: 0px 0px 10px 0px rgba(26, 115, 232, 0.9);
-}
+        .search-container button:hover {
+            background-color: #1E90FF;
+        }
 
         .dropdown-container {
             margin-top: 1rem; /* Ruimte boven de dropdown */
@@ -140,12 +138,6 @@
         tbody tr:nth-child(odd) {
             background-color: rgba(255, 255, 255, 0.1);
         }
-        @media only screen and (max-width: 600px){
-    .header-item{
-        font-size: 0.7rem;
-        padding-left: 0.4rem;
-        padding-right: 0.4rem;
-    }
     </style>
 </head>
 <body>
@@ -158,7 +150,7 @@
     <div class="content-wrapper">
         <div class="search-dropdown-container">
             <!-- Zoekbalk en knop boven de dropdown -->
-            <div class="title-search-container">
+            <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
                 <button onclick="searchFunction()">ZOEKEN</button>
             </div>
