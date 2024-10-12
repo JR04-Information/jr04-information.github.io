@@ -22,7 +22,7 @@
             top: 0;
             width: 100%;
             display: flex;
-            justify-content: flex-end; /* Align links naar rechts */
+            justify-content: flex-end;
             align-items: center;
             z-index: 1000;
         }
@@ -30,12 +30,12 @@
         header .dashboard-link,
         header .contact-link {
             text-decoration: none;
-            color: #ccc; /* Grijze kleur voor de knoppen */
-            margin-right: 1rem; /* Ruimte tussen de knoppen */
+            color: #ccc;
+            margin-right: 1rem;
         }
 
         header .contact-link:hover {
-            color: #1E90FF; /* Donkerdere blauw bij hover */
+            color: #1E90FF;
         }
 
         .content-wrapper {
@@ -44,40 +44,44 @@
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            padding-top: 6rem; /* Ruimte voor de header */
+            padding-top: 6rem;
         }
 
         .search-dropdown-container {
             display: flex;
+            flex-direction: column; /* Zet de elementen onder elkaar */
             justify-content: center;
             align-items: center;
             width: 100%;
             margin: 1rem 0;
-            white-space: nowrap; /* Zorg dat de inhoud niet op meerdere regels komt */
-            overflow-x: scroll; /* Voeg horizontaal scrollen toe indien nodig */
+            padding: 0 1rem;
         }
 
         .search-container {
-            display: inline-flex;
-            align-items: center; /* Verticaal centreren */
-            margin-right: 1rem;
-            width: auto; /* Laat de zoekbalk flexibel zijn */
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem; /* Ruimte tussen de zoekbalk en de dropdown */
+            width: 100%;
+            justify-content: center;
+            white-space: nowrap; /* Voorkom tekstoverloop */
+            overflow-x: auto; /* Voeg horizontaal scrollen toe indien nodig */
         }
 
         .search-container input {
             padding: 0.5rem;
             border-radius: 5px;
             border: none;
-            background-color: #888; /* Donkerdere grijze achtergrond voor de zoekbalk */
-            color: white; /* Tekstkleur van de zoekbalk */
-            max-width: 400px; /* Grotere max-breedte voor de zoekbalk */
+            background-color: #888;
+            color: white;
+            width: 100%;
+            max-width: 400px; /* Max breedte voor de zoekbalk */
         }
 
         .search-container button {
             padding: 0.5rem 1rem;
-            border-radius: 10px; /* Afgeronde hoeken */
+            border-radius: 10px;
             border: none;
-            background-color: #4169E1; /* Royal Blue kleur voor de knop */
+            background-color: #4169E1;
             color: white;
             font-size: 1rem;
             margin-left: 0.5rem;
@@ -85,17 +89,17 @@
         }
 
         .search-container button:hover {
-            background-color: #1E90FF; /* Donkerdere blauw bij hover */
+            background-color: #1E90FF;
         }
 
         .dropdown-container {
-            margin-left: 1rem; /* Ruimte tussen dropdown en zoekbalk */
-            flex: none; /* Laat de dropdown naast de zoekbalk staan zonder te wrappen */
-            min-width: 200px; /* Grotere minimale breedte voor de dropdown */
+            width: 100%;
+            max-width: 400px; /* Max breedte voor de dropdown */
+            margin: 0 auto; /* Centreer de dropdown */
         }
 
         .dropdown-container select {
-            width: 100%; /* Volledige breedte van de container */
+            width: 100%;
             margin: 0.5rem 0;
             font-size: 1em;
             padding: 0.3em 0.8em;
@@ -149,13 +153,13 @@
 
     <div class="content-wrapper">
         <div class="search-dropdown-container">
-            <!-- Zoekbalk direct onder de header -->
+            <!-- Zoekbalk en knop boven de dropdown -->
             <div class="search-container">
                 <input type="text" id="searchInput" placeholder="Zoek op voertuig of type...">
                 <button onclick="searchFunction()">ZOEKEN</button>
             </div>
 
-            <!-- Dropdown voor veiligheidsregio's naast de zoekbalk -->
+            <!-- Dropdown voor veiligheidsregio's onder de zoekbalk -->
             <div class="dropdown-container">
                 <select onchange="if (this.value) window.location.href=this.value;">
                     <option value="">Selecteer een veiligheidsregio</option>
