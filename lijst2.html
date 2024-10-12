@@ -143,9 +143,18 @@
         /* Media queries voor mobiele gebruikers (verder naar rechts) */
         @media (max-width: 768px) {
             .search-dropdown-container {
-                align-items: flex-end; /* Zoekbalk en dropdown naar rechts */
-                padding-right: 25%; /* Meer ruimte aan de rechterkant */
-                width: 90%; /* Breedte om het meer naar het midden te brengen */
+                align-items: center; /* Zoekbalk en dropdown in het midden */
+                padding: 0; /* Geen extra padding */
+                width: 100%; /* Volledige breedte gebruiken */
+                justify-content: center; /* Centraal uitgelijnd */
+            }
+
+            .search-container {
+                margin-right: 0; /* Geen marge aan de rechterkant */
+            }
+
+            .dropdown-container {
+                margin-right: 0; /* Geen marge aan de rechterkant */
             }
         }
 
