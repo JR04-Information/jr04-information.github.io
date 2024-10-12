@@ -25,7 +25,7 @@
             top: 0;
             width: 100%;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between; /* Knoppen goed verspreiden */
             align-items: center;
             z-index: 1000;
         }
@@ -34,7 +34,7 @@
         header .contact-link {
             text-decoration: none;
             color: #ccc;
-            margin-right: 1rem;
+            margin: 0 1rem; /* Marges voor de knoppen */
         }
 
         header .contact-link:hover {
@@ -52,9 +52,9 @@
 
         .search-dropdown-container {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column; /* Zorgt ervoor dat de zoekbalk en dropdown onder elkaar staan */
+            justify-content: center; /* Centraal uitgelijnd */
+            align-items: center; /* Centraal uitgelijnd */
             width: 100%;
             margin: 1rem 0;
             padding: 0 1rem;
@@ -138,10 +138,25 @@
 
         /* Media queries voor mobiele gebruikers */
         @media (max-width: 768px) {
-            .search-dropdown-container {
-                align-items: center; /* Zorgt ervoor dat alles in het midden staat */
+            header {
+                flex-direction: column; /* Knoppen onder elkaar op mobiel */
+                align-items: center; /* Centraal uitgelijnd */
             }
+
+            header .dashboard-link,
+            header .contact-link {
+                margin: 0.5rem 0; /* Ruimte tussen knoppen */
+            }
+
+            .search-dropdown-container {
+                align-items: center; /* Zoekbalk en dropdown in het midden */
+                padding: 0; /* Geen extra padding */
+                width: 100%; /* Volledige breedte gebruiken */
+            }
+
             .search-container {
+                width: 100%; /* Zorg ervoor dat de zoekcontainer de volledige breedte heeft */
+                flex-wrap: wrap; /* Zorgt ervoor dat elementen op mobiele apparaten goed worden weergegeven */
                 justify-content: center; /* Centraal uitgelijnd */
             }
         }
