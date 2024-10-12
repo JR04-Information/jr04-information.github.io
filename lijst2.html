@@ -17,10 +17,6 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        .flex {
-            display: flex;
-            align-items: center;
-        }
 
         header {
             background-color: #333;
@@ -58,7 +54,7 @@
             display: flex;
             flex-direction: column; /* Zet de elementen onder elkaar */
             justify-content: center;
-            align-items: center;
+            align-items: flex-end; /* Flexbox voor uitlijning naar rechts */
             width: 100%;
             margin: 1rem 0;
             padding: 0 1rem;
@@ -141,10 +137,7 @@
         /* Media queries voor mobiele gebruikers */
         @media (max-width: 768px) {
             .search-dropdown-container {
-                position: absolute; /* Absoluut positioneren voor nauwkeurige controle */
-                right: 3rem; /* Zorgt ervoor dat de container verder naar rechts verschuift */
-                top: 5rem; /* Zorgt ervoor dat de container onder de header blijft */
-                width: auto; /* Houd de breedte flexibel */
+                justify-content: flex-end; /* Uiteinde van de container rechts */
             }
         }
 
