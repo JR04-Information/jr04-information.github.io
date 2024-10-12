@@ -55,15 +55,14 @@
             flex-direction: column; /* Zet de elementen onder elkaar */
             align-items: center; /* Centreer elementen */
             width: 100%;
-            margin: 1rem 0;
-            padding: 0 1rem;
+            margin: 1rem 0; /* Ruimte boven en onder */
+            padding: 0 1rem; /* Padding voor responsiviteit */
         }
 
         .search-container {
             display: flex;
-            justify-content: center; /* Centreer zoekbalk en knop */
+            justify-content: center; /* Centreer de zoekbalk en knop */
             align-items: center;
-            margin-bottom: 0.5rem; /* Ruimte tussen zoekbalk en dropdown */
         }
 
         .search-container input[type=text] {
@@ -72,8 +71,7 @@
             border: none;
             background-color: #333;
             color: white;
-            min-width: 150px; /* Minimale breedte voor input */
-            max-width: 300px; /* Max breedte voor input */
+            width: 200px; /* Brede zoekbalk */
         }
 
         .search-container button {
@@ -92,7 +90,7 @@
         }
 
         .dropdown-container {
-            margin-top: 0.5rem; /* Ruimte boven dropdown */
+            margin-top: 1rem; /* Ruimte boven de dropdown */
         }
 
         .dropdown-container select {
@@ -102,6 +100,7 @@
             border-radius: 10px;
             background-color: #333;
             color: #fff;
+            width: 200px; /* Brede dropdown */
         }
 
         footer {
@@ -139,13 +138,11 @@
         }
 
         @media (max-width: 768px) {
-            .search-dropdown-container {
-                justify-content: flex-end; /* Plaats de zoekbalk verder naar rechts op mobiel */
-            }
-
-            .search-container {
-                margin-right: auto; /* Zorgt dat het naar rechts geduwd wordt */
-                margin-left: auto; /* Zorgt dat het naar rechts geduwd wordt */
+            .search-container,
+            .dropdown-container {
+                width: 100%; /* Zorg dat ze de volledige breedte gebruiken */
+                display: flex;
+                justify-content: center; /* Centreer ze op mobiel */
             }
         }
     </style>
