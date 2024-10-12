@@ -76,8 +76,6 @@
             color: white;
         }
 
-    
-
         .search-container button {
             padding: 0.5rem 1rem;
             border-radius: 10px;
@@ -93,7 +91,7 @@
             background-color: #1E90FF;
         }
 
-                .dropdown-container {
+        .dropdown-container {
             margin-right: 0.5rem;
         }
 
@@ -139,10 +137,19 @@
         tbody tr:nth-child(odd) {
             background-color: rgba(255, 255, 255, 0.1);
         }
+
+        /* Media queries voor mobiele gebruikers */
+        @media (max-width: 768px) {
+            .search-dropdown-container {
+                align-items: flex-end; /* Verplaatst zoekbalk, knop en dropdown naar rechts op mobiele apparaten */
+            }
+        }
+
         @media (max-width: 768px) {
             .overflow-x-auto {
                 max-height: none; /* Geen hoogtebeperking op kleinere schermen */
             }
+        }
     </style>
 </head>
 <body>
